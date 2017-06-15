@@ -1,36 +1,33 @@
 body {
-	font-family: Helvetica, sans-serif;
+	margin-bottom: 0;
+    padding: 0;
 }
 
 .jumbotron {
-	background-image: url("../images/fela_jumbotron.jpg");	
+	background-image: url("https://www.dropbox.com/s/1nttfct9qczmzp7/fela_jumbotron.jpg?raw=1");	/* https://drive.google.com/open?id=0B7Iy_mpiidp_QmczZFd6X0tVVkU */
 	background-size: cover;
 	min-height: 100%;
 }
 
-.jumbotron #header {
-	font-family: Grotzec-Black;
-	color: white;
-	text-align: center;
-	position: relative;
-	top: 180px;
-	left: 450px;
-	width: 650px;
+.jumbotron #header { 
+    float: right;
+    color: white;
+    font-family: Grotzec-Black;
+    text-align: center;
+    margin-right: 120px;
+    margin-top: 150px;
 }
 
 .jumbotron .fela-quote {
-	float: right;
-	position: relative;
-	top: 280px;
-	right: 100px;
-	width: 700px;
-	color: white;
-
+    float: right;
+    width: 55%;
+    margin-right: 80px;
+    color: white;
 }
 
 .jumbotron .fela-quote #quote {
 	background-color: #f9a300;
-	display:inline;
+	display: inline;
     line-height: 35px;
     font-weight: bold;
 }
@@ -39,3 +36,59 @@ body {
 	text-align: right;
 	color: #f9a300;
 }
+
+@media only screen and (max-width:560px){
+
+  .jumbotron{
+    display: none;
+  }
+
+} /* max-width 600 px */
+
+
+.container {
+	text-align: center;
+}
+
+#title {
+   font-family: Grotzec-Black;
+}
+
+#content {
+   text-align: left;
+   margin-top: 20px;
+   font-family: Helvetica;
+   font-size: 17px;
+}
+
+#video {
+   background-color: #291f20;
+   min-height: 100%;
+}
+
+#video h1{
+	color: #f9a300;
+	font-weight: bold;
+	font-family: Grotzec-Black;
+	text-align: center;
+	margin-top: 75px;
+}
+
+#video iframe{
+    margin-top: 25px;
+}
+
+#footer {
+	background-color:rgba(0,0,0,0.8);
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	height: 50px;
+	margin-top: 0px;
+}
+
+#footer h4 {
+	margin: 0;
+	padding-top: 18px;
+}
+
