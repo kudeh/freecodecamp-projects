@@ -2,13 +2,14 @@
 Projects that I have completed while going through the FreeCodeCamp Curriculum.
 
 ## Front End Development Projects
-### Basic Front End Development Projects
+#### Basic Front End Development Projects
 
-   #### Build A Tribute Page - [View On CodePen](https://codepen.io/kudeh/full/mwrdNe/)
+   1. Build A Tribute Page - [View On CodePen](https://codepen.io/kudeh/full/mwrdNe/).
+   2. Build A Portfolio Webpage.
     
      
-### Intermediate Front End Development Projects
+#### Intermediate Front End Development Projects
 
-### Advanced Front End Development Projects
+#### Advanced Front End Development Projects
 
 ## Back-End-Development-Projects
