@@ -10,6 +10,8 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
      
 #### Intermediate Front End Development Projects
 
+   1. Build a Random Quote Machine - [View On CodePen](https://codepen.io/kudeh/full/vJrbpJ/).
+
 #### Advanced Front End Development Projects
 
 ## Back-End-Development-Projects
