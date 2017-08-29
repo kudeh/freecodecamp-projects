@@ -45,6 +45,6 @@ $(document).ready(function(){
 function updateTwitterValues(quote, author) {
 // clear out the <a> tag that's currently there...probably don't really need this since you're replacing whatever is in there already.
   $("#share").html('&nbsp;'); 
-  $("#share").html('<a href="https://twitter.com/intent/tweet?text='+encodeURIComponent(quote)+'20%2D%20'+encodeURIComponent(author)+'" class="twitter-share-button" data-size="large">Tweet</a>');
+  $("#share").html('<a href="https://twitter.com/intent/tweet?text='+encodeURIComponent(quote)+'%20%2D%20'+encodeURIComponent(author)+'" class="twitter-share-button" data-size="large" data-url="https://codepen.io/kudeh/full/vJrbpJ/">Tweet</a>');
 twttr.widgets.load();
 }
