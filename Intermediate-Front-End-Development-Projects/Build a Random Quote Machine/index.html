@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>Kene Udeh - Portfolio</title>
 	<meta charset="UTF-8" />
 	<meta name="description" content="QuotePool" />
@@ -15,8 +16,26 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/script.js"></script>
+  <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
 </head>
 <body>
+
 <div class="container">
   
   <div id="header" class="row">
@@ -39,6 +58,19 @@
     </div>
   </div>
   
+  <div id="share" class="row">
+  <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Quotepool%20is%20the best%20website%20for%20daily%20quotes%21%21%20%2D%20Anon" data-size="large">
+Tweet</a>
+  </div>
+
 </div>
+
+  <footer id="footer">
+    <h4>2017 &#169; 
+          <a href="https://www.linkedin.com/in/kudeh" target="_blank"> Kene Udeh</a> / A FreeCodeCamp Project 
+      </h4>
+  </footer>
+
 </body>
 </html>

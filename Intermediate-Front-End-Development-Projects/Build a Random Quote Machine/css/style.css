@@ -8,14 +8,14 @@ body {
 
 .container {
   width: 60%;
-  height: 100vh;
+  height: 95vh;
   background-color: #87CEFA;
   border-radius: 20px;
 }
 
 #header {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 15%;
   margin-bottom: 15px;
 }
 
@@ -31,7 +31,8 @@ body {
   font-size: 1.25em;
   padding: 20px;
   color: blue;
-  
+  width: 75%;
+  margin: auto;
 }
 
 #new-quote {
@@ -63,4 +64,24 @@ body {
   text-align: right;
   color: black;
   font-style: italic;
+}
+
+.twitter-share-button {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#footer {
+  background-color:rgba(0,0,0,0.8);
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  height: 50px;
+  margin-top: 0px;
+}
+
+#footer h4 {
+  margin: 0;
+  padding-top: 18px;
 }
