@@ -1,18 +1,26 @@
+* {
+	-webkit-box-sizing: border-box;
+	 box-sizing: border-box;
+}
+
 body {
-	margin-bottom: 0;
-    padding: 0;
+	  margin: 0px;
+    padding: 0px;
 }
 
 .jumbotron {
 	background-image: url("https://www.dropbox.com/s/1nttfct9qczmzp7/fela_jumbotron.jpg?raw=1");	/* https://drive.google.com/open?id=0B7Iy_mpiidp_QmczZFd6X0tVVkU */
 	background-size: cover;
 	min-height: 100%;
+	overflow: hidden;
+	margin: 0px;
 }
 
-.jumbotron #header { 
+.jumbotron #header {
+	  font-family: 'Chela One', cursive;
+		font-weight: bold;
     float: right;
     color: white;
-    font-family: Grotzec-Black;
     text-align: center;
     margin-right: 120px;
     margin-top: 150px;
@@ -28,13 +36,15 @@ body {
 .jumbotron .fela-quote #quote {
 	background-color: #f9a300;
 	display: inline;
-    line-height: 35px;
-    font-weight: bold;
+  line-height: 35px;
+  font-weight: bold;
+	font-family: 'Aubrey', cursive;
 }
 
 .jumbotron .fela-quote #name {
 	text-align: right;
 	color: #f9a300;
+	font-family: 'Mr Bedfort', cursive;
 }
 
 @media only screen and (max-width:560px){
@@ -48,20 +58,39 @@ body {
 
 .container {
 	text-align: center;
+	background-color: #FFDAA8;
+	margin: 0px;
+	width: 100%;
+	color: black;
+	font-family: 'Aubrey', cursive;
 }
 
 #title {
-   font-family: Grotzec-Black;
+   font-family: 'Aubrey', cursive;
+	 font-size: 3em;
+	 color: #553101;
+}
+
+#description {
+	color: #553101;
+	font-weight: bold;
 }
 
 #content {
    text-align: left;
    margin-top: 20px;
-   font-family: Helvetica;
    font-size: 17px;
+	 font-family: Grotzec-Black;
+	 font-size: 1.25em;
+}
+
+#content a {
+	font-family: 'Aubrey', cursive;
+	text-decoration: underline;
 }
 
 #video {
+  padding: 0px;
    background-color: #291f20;
    min-height: 100%;
 }
@@ -69,13 +98,14 @@ body {
 #video h1{
 	color: #f9a300;
 	font-weight: bold;
-	font-family: Grotzec-Black;
+	font-family: 'Hanalei Fill', cursive;
 	text-align: center;
-	margin-top: 75px;
+	margin-top: 10px;
 }
 
 #video iframe{
-    margin-top: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #footer {
@@ -85,10 +115,10 @@ body {
 	vertical-align: middle;
 	height: 50px;
 	margin-top: 0px;
+	font-family: 'Aubrey', cursive;
 }
 
 #footer h4 {
 	margin: 0;
 	padding-top: 18px;
 }
-
