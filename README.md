@@ -1,17 +1,25 @@
 # My-FreeCodeCamp-Projects
 Projects that I have completed while going through the FreeCodeCamp Curriculum.
 
-## Front End Development Projects
-#### Basic Front End Development Projects
-
+## Responsive Web Design Projects
    1. Build A Tribute Page - [View On CodePen](https://codepen.io/kudeh/full/mwrdNe/).
-   2. Build A Personal Portfolio Webpage - [View On CodePen](https://codepen.io/kudeh/full/VWPvWX/).
-    
-     
-#### Intermediate Front End Development Projects
+   2. Build A Survey Form
+   3. Build A Product Landing Page
+   4. Build A Technical Documentation Page
+   5. Build A Personal Portfolio Webpage - [View On CodePen](https://codepen.io/kudeh/full/VWPvWX/).
+         
+## Javascript Algorithms and Data Structures Projects
+   
 
+## Front End Libraries Projects
    1. Build a Random Quote Machine - [View On CodePen](https://codepen.io/kudeh/full/vJrbpJ/).
+   
+   
+## Data Visualization Projects
 
-#### Advanced Front End Development Projects
 
-## Back-End-Development-Projects
+## APIs And Microservices Projects
+
+
+## Information Security And Quality Assurance Projects
+
