@@ -11,15 +11,24 @@ html {
 }
 
 body {
-  background-color: red;
   margin: 0px;
   padding: 0px;
   display: grid;
-  grid-template-rows: 200px auto 100px;
+  grid-template-rows: auto auto auto;
   grid-template-columns: 1fr;
   grid-template-areas: "header"
                        "main"
                        "footer";
+  justify-content: center;
+  /*background:
+  linear-gradient(135deg, white 25%, transparent 25%) -50px 0,
+  linear-gradient(225deg, white 25%, transparent 25%) -50px 0,
+  linear-gradient(315deg, white 25%, transparent 25%),
+  linear-gradient(45deg, white 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: #0E7FC5;*/
+  background-color: rgba(14,127,197, 0.5);
+
 }
 
 header {
@@ -27,16 +36,104 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 20px;
+  background-color: red;
+  margin-bottom: 0px;
 }
 
 header #title {
+  font-family: 'Bangers', cursive;
   color: white;
+  letter-spacing: 0.10em;
+  margin: 0px;
 }
 
 .container {
-  background-color: white;
-  width: 75%;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto;
+  grid-template-areas: "form-description"
+                       "form";
+  place-self: center;
+  justify-items: center;
+  align-items: center;
   justify-self: center;
+  align-self: center;
+  background-color: white;
+  border: 3px solid red;
+  border-radius: 15px;
+  margin: 20px 0 20px 0;
+  padding: 20px;
+}
+
+.container p {
+  grid-area: form-description;
+  justify-self: center;
+  align-self: center;
+  font-family: 'Bangers', cursive;
+  font-size: 1.15em;
+  text-align: center;
+  border: 1px solid blue;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#survey-form {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: 'Aldrich', sans-serif;
+}
+
+#survey-form #about-you{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-row-gap: 10px;
+  font-size: 1.25em;
+  margin: 15px;
+}
+
+#survey-form #about-you input {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.display-block {
+  display: block;
+}
+
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+#favorite-movie-options {
+  margin: 10px 0 10px 0;
+}
+
+#favorite-avenger-options {
+  margin: 10px 0 10px 0;
+}
+
+#dropdown {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 2fr;
+  justify-items: stretch;
+  margin: 10px 0 10px 0;
+}
+
+#dropdown select {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+#textarea {
+  margin: 10px 0 10px 0;
 }
 
 footer {

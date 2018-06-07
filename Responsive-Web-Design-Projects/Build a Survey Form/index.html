@@ -9,13 +9,14 @@
   <meta name="author" content="Kene Udeh" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Aldrich|Bangers" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
   <header>
     <div class="logo">
-      <img src="images/logo2.png" alt="" width="100px" height="100px">
+      <img src="images/logo2.png" alt="" width="80px" height="80px">
     </div>
     <h1 id="title">THE AVENGERS SURVEY</h1>
   </header>
@@ -24,12 +25,15 @@
 
     <form id="survey-form">
 
-      <label id="name-label" for="name"><span class="required">*</span>Name: </label>
+      <div id="about-you">
+      <label id="name-label" class="display-block" for="name"><span class="required">*</span>Name:</label>
       <input id="name" type="text" name="name" placeholder="Enter your Name" autofocus required>
-      <label id="email-label" for="email"><span class="required">*</span>Email: </label>
+      <label id="email-label" class="display-block" for="email"><span class="required">*</span>Email:</label>
       <input id="email" type="text" name="email" placeholder="Enter your Email" required>
-      <label id="number-label" for="number"><span class="required">*</span>Age: </label>
+      <label id="number-label" class="display-block" for="number"><span class="required">*</span>Age:</label>
       <input id="number" type="number" name="age" placeholder="Enter your Age" required>
+    </div>
+
       <!-- begin radio buttons-->
       <fieldset id="favorite-movie-options">
         <legend>What is your Favorite Avengers Movie</legend>
@@ -61,7 +65,7 @@
         <label for="iron-man">
           <input id="iron-man" type="checkbox" name="favorite-avenger" value="Iron Man">
           Iron Man
-        </label>
+        </label>center
         <label for="hulk">
           <input id="hulk" type="checkbox" name="favorite-avenger" value="Hulk">
           Hulk
@@ -106,7 +110,8 @@
       <!-- end checkboxes -->
 
       <!-- begin dropdown -->
-      <label for="coolest-planet">What's the coolest planet</label>
+      <div id="dropdown">
+      <label for="coolest-planet">What's the coolest planet: </label>
       <select id="coolest-planet" name="coolest-planet">
         <option value="Earth" selected>Earth</option>
         <option value="Knowhere">Knowhere</option>
@@ -115,11 +120,15 @@
         <option value="Titan">Titan</option>
         <option value="Nidavellir">Nidavellir</option>
       </select>
+      </div>
       <!-- end dropdown -->
 
-      <label for="message">Tell Us More Of The Avengers</label>
+      <div id="textarea">
+      <label class="display-block" for="message">Tell Us More Of The Avengers: </label>
       <textarea id="message" name="message" rows="8" cols="80"></textarea>
+      </div>
 
+      <button id="submit" type="submit" name="button">Submit</button>
     </form>
   </div>
 
