@@ -1,0 +1,44 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  /*border: 1px solid black;*/
+}
+
+body {
+  background-color: red;
+  margin: 0px;
+  padding: 0px;
+  display: grid;
+  grid-template-rows: 200px auto 100px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header"
+                       "main"
+                       "footer";
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header #title {
+  color: white;
+}
+
+.container {
+  background-color: white;
+  width: 75%;
+  justify-self: center;
+}
+
+footer {
+
+}
