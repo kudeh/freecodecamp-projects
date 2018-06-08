@@ -20,12 +20,13 @@
     </div>
     <h1 id="title">THE AVENGERS SURVEY</h1>
   </header>
+
   <div class="container">
     <p id="description">Tell us what you like about the Avengers</p>
 
     <form id="survey-form">
 
-      <div id="about-you">
+      <div class="form-item-margin" id="about-you">
       <label id="name-label" class="display-block" for="name"><span class="required">*</span>Name:</label>
       <input id="name" type="text" name="name" placeholder="Enter your Name" autofocus required>
       <label id="email-label" class="display-block" for="email"><span class="required">*</span>Email:</label>
@@ -35,8 +36,9 @@
     </div>
 
       <!-- begin radio buttons-->
-      <fieldset id="favorite-movie-options">
+      <fieldset class="form-item-margin" id="favorite-movie-options">
         <legend>What is your Favorite Avengers Movie</legend>
+        <div>
         <label for="the-avengers">
           <input id="the-avengers" type="radio" name="favorite-movie" value="The Avengers" >
           The Avengers
@@ -49,11 +51,13 @@
           <input id="infinity-war" type="radio" name="favorite-movie" value="Avengers: Infinity War" >
           Avengers: Infinity War
         </label>
+      </div>
       </fieldset>
-      <!-- end radio buttons -->
+      <!-- enalign-items: center;d radio buttons -->
       <!-- begin checkboxes -->
-      <fieldset id="favorite-avenger-options">
+      <fieldset class="form-item-margin" id="favorite-avenger-options">
         <legend>Who are your Favorite Avengers</legend>
+        <div>
         <label for="black-panther">
           <input id="black-panther" type="checkbox" name="favorite-avenger" value="Black Panther">
           Black Panther
@@ -62,10 +66,6 @@
           <input id="iron-man" type="checkbox" name="favorite-avenger" value="Iron Man">
           Iron Man
         </label>
-        <label for="iron-man">
-          <input id="iron-man" type="checkbox" name="favorite-avenger" value="Iron Man">
-          Iron Man
-        </label>center
         <label for="hulk">
           <input id="hulk" type="checkbox" name="favorite-avenger" value="Hulk">
           Hulk
@@ -106,11 +106,12 @@
           <input id="hawkeye" type="checkbox" name="favorite-avenger" value="Hawkeye">
           Hawkeye
         </label>
+        </div>
       </fieldset>
       <!-- end checkboxes -->
 
       <!-- begin dropdown -->
-      <div id="dropdown">
+      <div class="form-item-margin" id="dropdown">
       <label for="coolest-planet">What's the coolest planet: </label>
       <select id="coolest-planet" name="coolest-planet">
         <option value="Earth" selected>Earth</option>
@@ -123,12 +124,12 @@
       </div>
       <!-- end dropdown -->
 
-      <div id="textarea">
+      <div class="form-item-margin" id="textarea">
       <label class="display-block" for="message">Tell Us More Of The Avengers: </label>
-      <textarea id="message" name="message" rows="8" cols="80"></textarea>
+      <textarea id="message" name="message"></textarea>
       </div>
 
-      <button id="submit" type="submit" name="button">Submit</button>
+      <button class="form-item-margin" id="submit" type="submit" name="button">Submit</button>
     </form>
   </div>
 
