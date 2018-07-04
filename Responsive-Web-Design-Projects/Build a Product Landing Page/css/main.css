@@ -3,3 +3,159 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+font-family: 'Roboto', sans-serif;
+}
+
+#header {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-column-gap: 10px;
+  background-color: #8BBF6A;
+  border-bottom: 2px solid green;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+}
+
+.logo img{
+  height: 84px;
+  width: 80px;
+}
+
+.logo h2 {
+  padding: 5px;
+}
+
+#nav-bar ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.nav-link {
+  text-decoration: none;
+  height: 100%;
+  font-size: 1.15em;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #8BBF6A;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#video {
+  max-width: 560px;
+}
+
+#benefits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.benefit-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.benefit-card .desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#product-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-image img{
+  width: 250px;
+  height: 200px;
+}
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #8BBF6A;
+  color: white;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+footer p {
+   font-weight: bold;
+}
+
+.footer-link {
+  padding: 0 15px 0 15px;
+}
+
+.footer-link:link,
+.footer-link:active,
+.footer-link:visited {
+  text-decoration: none;
+  color: #f9f9f9;
+}
+
+.footer-link:hover {
+  color: #0f73c4;
+}
+
+@media only screen and (max-width: 500px) {
+  #header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #nav-bar ul {
+    justify-content: center;
+  }
+
+  #video {
+    max-width: 310px;
+  }
+}
