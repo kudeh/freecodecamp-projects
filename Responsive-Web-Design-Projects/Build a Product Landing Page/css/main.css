@@ -56,12 +56,51 @@ font-family: 'Roboto', sans-serif;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: url("https://e3.365dm.com/18/06/1096x616/skynews-nike-nigera_4326134.jpg?20180601224151");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: #8BBF6A;
+  height: 91vh;
+}
+
+#hero h2 {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: rgba(139,191,106,0.2);
+  text-align: center;
+  width: 90%;
 }
 
 #form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 90%;
+  background-color: rgba(139,191,106,0.2);
+}
+
+#email {
+  width: 60%;
+  height: 30px;
+  margin: 10px;
+  border: 2px solid green;
+}
+
+#submit {
+  padding: 10px;
+  font-family: 'Aldrich', sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  border: 1px solid white;
+  background-color: green;
+  border-radius: 5px;
+  color: white;
+  margin: 10px;
+}
+
+#submit:hover {
+  background-color: #8BBF6A;
 }
 
 #about {
@@ -69,6 +108,7 @@ font-family: 'Roboto', sans-serif;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 #video {
@@ -79,6 +119,7 @@ font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 .benefit-card {
@@ -96,6 +137,7 @@ font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 #product-grid {
@@ -118,7 +160,7 @@ footer {
   background-color: #8BBF6A;
   color: white;
   padding-top: 10px;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 footer p {
