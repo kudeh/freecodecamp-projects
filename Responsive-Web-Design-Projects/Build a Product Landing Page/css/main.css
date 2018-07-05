@@ -9,6 +9,10 @@ font-family: 'Roboto', sans-serif;
 }
 
 #header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
   display: grid;
   grid-template-columns: 2fr 4fr;
   grid-column-gap: 10px;
@@ -50,6 +54,8 @@ font-family: 'Roboto', sans-serif;
   color: white;
   font-weight: bold;
 }
+
+.anchor { padding-top: 100px; }
 
 #hero {
   display: flex;
@@ -212,7 +218,7 @@ font-weight: bold;
 
 .product-image img{
   width: 250px;
-  height: 200px;
+  height: 180px;
 }
 
 .btn {
@@ -264,11 +270,17 @@ footer p {
   #header {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    font-size: 0.8em;
   }
 
   .logo {
     display: flex;
     flex-direction: column;
+  }
+
+  .logo img{
+    display: none;
   }
 
   #nav-bar ul {
