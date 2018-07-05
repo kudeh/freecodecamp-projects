@@ -109,6 +109,26 @@ font-family: 'Roboto', sans-serif;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: url("https://versus.uk.com/wp-content/uploads/2018/02/Nike-News-Football-Soccer-Nigeria-National-Team-Kit-4_77368.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #D3E4DE;
+  color: #D3E4DE;
+}
+
+#about h2 {
+  text-align: center;
+  width: 90%;
+  background-color: rgba(0,0,0,0.5);
+  text-decoration: underline;
+}
+
+#about p {
+  text-align: justify;
+  padding: 10px;
+  width: 90%;
+  background-color: rgba(0,0,0,0.5);
+  margin-bottom: 20px;
 }
 
 #video {
@@ -119,18 +139,50 @@ font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100vh;
+  /*background: url("http://img2.thejournal.ie/inline/3839690/original?width=630&version=3839690");
+  background-repeat: no-repeat;
+  background-size: cover;*/
+  background:
+linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
+background-size: 100px 100px;
+background-color: #8BBF6A;
+}
+
+#benefits h2 {
+  text-align: center;
+  width: 90%;
+  background-color: rgba(139,191,106,0.7);
+}
+
+#benefit-card-list {
+  width: 90%;
 }
 
 .benefit-card {
   display: flex;
   flex-direction: row;
+  padding: 10px;
+  width: 90%;
+  background-color: rgba(139,191,106,0.7);
+}
+
+.icon {
+  text-align: center;
+  margin: 5px;
+  width: 100px;
+  color: green;
 }
 
 .benefit-card .desc {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 5px;
 }
 
 #products {
