@@ -89,7 +89,6 @@ font-family: 'Roboto', sans-serif;
 
 #submit {
   padding: 10px;
-  font-family: 'Aldrich', sans-serif;
   font-size: 1.25em;
   font-weight: bold;
   border: 1px solid white;
@@ -194,13 +193,16 @@ font-weight: bold;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: #F5F5F5;
 }
 
 #product-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  background-color: white;
 }
 
 .product-card {
@@ -211,6 +213,21 @@ font-weight: bold;
 .product-image img{
   width: 250px;
   height: 200px;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 1.25em;
+  font-weight: bold;
+  border: 1px solid black;
+  background-color: green;
+  border-radius: 5px;
+  color: white;
+  margin: 10px;
+}
+
+.btn:hover {
+  background-color: #8BBF6A;
 }
 
 
@@ -262,14 +279,37 @@ footer p {
     max-width: 310px;
   }
 
+  #products {
+    font-size: 0.9em;
+  }
+
+  .product-card {
+    margin: 5px;
+    text-align: center;
+  }
+
+  .product-name h3, .product-price{
+    font-size: 0.8em;
+  }
+
+  .btn {
+    font-size: 0.9em;
+  }
+
+  .product-image img{
+    width: 100px;
+    height: 70px;
+  }
+
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (max-height: 610px) {
+
   #product-grid {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 20px;
-    grid-column-gap: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
+
 }
