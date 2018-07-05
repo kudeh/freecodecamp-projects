@@ -151,6 +151,8 @@ linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
 linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
 background-size: 100px 100px;
 background-color: #8BBF6A;
+color: black;
+font-weight: bold;
 }
 
 #benefits h2 {
@@ -160,6 +162,8 @@ background-color: #8BBF6A;
 }
 
 #benefit-card-list {
+  display: flex;
+  flex-direction: column;
   width: 90%;
 }
 
@@ -167,7 +171,6 @@ background-color: #8BBF6A;
   display: flex;
   flex-direction: row;
   padding: 10px;
-  width: 90%;
   background-color: rgba(139,191,106,0.7);
 }
 
@@ -189,6 +192,7 @@ background-color: #8BBF6A;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
@@ -197,6 +201,11 @@ background-color: #8BBF6A;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.product-card {
+  margin: 15px;
+  text-align: center;
 }
 
 .product-image img{
@@ -251,5 +260,16 @@ footer p {
 
   #video {
     max-width: 310px;
+  }
+
+}
+
+@media only screen and (min-width: 500px) {
+  #product-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
   }
 }
