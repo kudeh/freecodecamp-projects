@@ -163,7 +163,7 @@ font-weight: bold;
 #benefits h2 {
   text-align: center;
   width: 90%;
-  background-color: rgba(139,191,106,0.7);
+  background-color: rgba(255,255,255,0.7);
 }
 
 #benefit-card-list {
@@ -176,7 +176,7 @@ font-weight: bold;
   display: flex;
   flex-direction: row;
   padding: 10px;
-  background-color: rgba(139,191,106,0.7);
+  background-color: rgba(255,255,255,0.7);
 }
 
 .icon {
@@ -199,6 +199,12 @@ font-weight: bold;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background:
+linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
+background-size: 100px 100px;
   background-color: #F5F5F5;
 }
 
@@ -208,12 +214,16 @@ font-weight: bold;
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 20px;
   grid-column-gap: 20px;
-  background-color: white;
+
 }
 
 .product-card {
   margin: 15px;
   text-align: center;
+  border: 2px solid green;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #8BBF6A;
+  background-color: white;
 }
 
 .product-image img{
