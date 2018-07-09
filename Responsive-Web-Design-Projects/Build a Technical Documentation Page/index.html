@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-  <div class="page-container">
+  <nav id="nav-bar">
+  <header>
     <h1 id="title">NodeJS</h1>
   </header>
   <ul>
@@ -33,7 +34,42 @@
       <h2>Introduction</h2>
     </header>
     <article>
+      <p>
+        NodeJS is an open source server environment it allows you to run javascript
+        on the server.
+      </p>
+      <p>
+        As an asynchronous event driven JavaScript runtime, Node is designed to
+        build scalable network applications. In the following "hello world" example,
+        many connections can be handled concurrently. Upon each connection the callback
+        is fired, but if there is no work to be done, Node will sleep.
+      </p>
+      <pre>
+        <code>
+  const http = require('http');
 
+  const hostname = '127.0.0.1';
+  const port = 3000;
+
+  const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World\n');
+  });
+
+  server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+  });
+      </code>
+      </pre>
+
+      <h4>What can NodeJS do?</h4>
+      <ul>
+  <li>Node.js can generate dynamic page content</li>
+  <li>Node.js can create, open, read, write, delete, and close files on the server</li>
+  <li>Node.js can collect form data</li>
+  <li>Node.js can add, delete, modify data in your database</li>
+</ul>
     </article>
   </section>
   <section class="main-section" id="modules">
@@ -41,7 +77,11 @@
       <h2>Modules</h2>
     </header>
     <article>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
+Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+
+Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
     </article>
   </section>
   <section class="main-section" id="http_module">
@@ -49,7 +89,11 @@
       <h2>HTTP Module</h2>
     </header>
     <article>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
+      Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+
+      Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
     </article>
   </section>
   <section class="main-section" id="file_system_module">
@@ -57,7 +101,11 @@
       <h2>File System Module</h2>
     </header>
     <article>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
+Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+
+Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
     </article>
   </section>
   <section class="main-section" id="url_module">
@@ -65,7 +113,11 @@
       <h2>URL Modules</h2>
     </header>
     <article>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
+Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+
+Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
     </article>
   </section>
   <section class="main-section" id="npm">
@@ -73,7 +125,11 @@
       <h2>NPM</h2>
     </header>
     <article>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
+Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+
+Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
     </article>
   </section>
   <section class="main-section" id="events">
@@ -81,7 +137,11 @@
       <h2>Events</h2>
     </header>
     <article>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
+Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+
+Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
     </article>
   </section>
   <section class="main-section" id="uploads">
@@ -89,7 +149,11 @@
       <h2>Upload Files</h2>
     </header>
     <article>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
+Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+
+Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
     </article>
   </section>
   <section class="main-section" id="email">
@@ -97,10 +161,13 @@
       <h2>Email</h2>
     </header>
     <article>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
+Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+
+Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
     </article>
   </section>
 </main>
-</div>
 </body>
 </html>
