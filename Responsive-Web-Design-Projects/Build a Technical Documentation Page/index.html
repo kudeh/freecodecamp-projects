@@ -27,8 +27,6 @@
     <a class="nav-link" href="#url_module" rel="internal"><li>URL Module</li></a>
     <a class="nav-link" href="#npm" rel="internal"><li>NPM</li></a>
     <a class="nav-link" href="#events" rel="internal"><li>Events</li></a>
-    <a class="nav-link" href="#uploads" rel="internal"><li>Upload Files</li></a>
-    <a class="nav-link" href="#email" rel="internal"><li>Email</li></a>
   </ul>
 </nav>
 <main id="main-doc">
@@ -215,11 +213,33 @@ fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
       <h2>URL Modules</h2>
     </header>
     <article>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      <p>
+        The URL module splits up a web address into readable parts.
+        To include the URL module, use the <code class="codespan">require()</code> method:
+      </p>
+      <pre>
+        <code class="javascript">
+var url = require('url');
+        </code>
+      </pre>
+      <p>
+        Parse an address with the <code class="codespan">url.parse()</code> method,
+         and it will return a URL object with each part of the address as properties:
+      </p>
+      <pre>
+        <code class="javascript">
+var url = require('url');
+var adr = 'http://localhost:8080/default.htm?year=2017&month=february';
+var q = url.parse(adr, true);
 
-Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+console.log(q.host); //returns 'localhost:8080'
+console.log(q.pathname); //returns '/default.htm'
+console.log(q.search); //returns '?year=2017&month=february'
 
-Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
+var qdata = q.query; //returns an object: { year: 2017, month: 'february' }
+console.log(qdata.month); //returns 'february'
+        </code>
+      </pre>
     </article>
   </section>
   <section class="main-section" id="npm">
@@ -227,11 +247,30 @@ Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sa
       <h2>NPM</h2>
     </header>
     <article>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
-
-Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
+      <p>
+        NPM is a package manager for Node.js packages, or modules if you like.
+        <a href="https://www.npmjs.com/">www.npmjs.com</a> hosts thousands of free packages to download and use.
+        The NPM program is installed on your computer when you install Node.js
+      </p><br>
+      <h4>What is a Package?</h4>
+      <p>
+        A package in Node.js contains all the files you need for a module.
+        Modules are JavaScript libraries you can include in your project.
+      </p><br>
+      <h4>Download a Package?</h4>
+      <p>
+        Downloading a package is very easy.
+        Open the command line interface and tell NPM to download the package you want.
+        I want to download a package called "upper-case":
+      </p>
+      <code class="terminalspan">C:\Users\Your Name>npm install upper-case</code><br>
+      <p>
+        Now you have downloaded and installed your first package!
+        NPM creates a folder named "node_modules", where the package
+        will be placed. All packages you install in the future will be placed in this folder.
+        My project now has a folder structure like this:<br>
+        <code class="codespan">C:\Users\My Name\node_modules\upper-case</code>
+      </p>
     </article>
   </section>
   <section class="main-section" id="events">
@@ -239,35 +278,57 @@ Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sa
       <h2>Events</h2>
     </header>
     <article>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      <p>Node.js is perfect for event-driven applications.
+        Every action on a computer is an event. Like when a connection is made or a file is opened.
+        Objects in Node.js can fire events, like the readStream object fires events
+        when opening and closing a file:
+      </p>
+      <pre>
+        <code class="javascript">
+var fs = require('fs');
+var rs = fs.createReadStream('./demofile.txt');
+rs.on('open', function () {
+  console.log('The file is open');
+});
+        </code>
+      </pre>
+      <h4>Events Module</h4>
+      <p>
+        Node.js has a built-in module, called "Events", where you can create-, fire-, and listen for- your own events.
+        To include the built-in Events module use the <code class="codespan">require()</code> method. In addition,
+        all event properties and methods are an instance of an EventEmitter object. To be
+        able to access these properties and methods, create an EventEmitter object:
+      </p>
+      <pre>
+        <code class="javascript">
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+        </code>
+      </pre>
 
-Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+      <h4>The EventEmitter Object</h4>
+      <p>
+        You can assign event handlers to your own events with the EventEmitter object.
+        In the example below we have created a function that will be executed when a "scream" event is fired.
+        To fire an event, use the <code class="codespan">emit()</code> method.
+      </p>
+      <pre>
+        <code class="javascript">
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
 
-Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
-    </article>
-  </section>
-  <section class="main-section" id="uploads">
-    <header class="section-header">
-      <h2>Upload Files</h2>
-    </header>
-    <article>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+//Create an event handler:
+var myEventHandler = function () {
+  console.log('I hear a scream!');
+}
 
-Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+//Assign the event handler to an event:
+eventEmitter.on('scream', myEventHandler);
 
-Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
-    </article>
-  </section>
-  <section class="main-section" id="email">
-    <header class="section-header">
-      <h2>Email</h2>
-    </header>
-    <article>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
-
-Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
+//Fire the 'scream' event:
+eventEmitter.emit('scream');
+        </code>
+      </pre>
     </article>
   </section>
 </main>
