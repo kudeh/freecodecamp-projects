@@ -9,7 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
   <link rel="stylesheet" href="css/main.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 </head>
 <body>
   <nav id="nav-bar">
@@ -44,8 +47,8 @@
         many connections can be handled concurrently. Upon each connection the callback
         is fired, but if there is no work to be done, Node will sleep.
       </p>
-      <pre>
-        <code>
+      <pre >
+        <code class="javascript">
   const http = require('http');
 
   const hostname = '127.0.0.1';
@@ -169,5 +172,6 @@ Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sa
     </article>
   </section>
 </main>
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

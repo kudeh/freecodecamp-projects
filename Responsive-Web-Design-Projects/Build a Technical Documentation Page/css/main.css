@@ -8,6 +8,7 @@ body {
 font-family: 'Roboto', sans-serif;
 display: flex;
 height: 100vh;
+  background-color: #f9f2f2;
 }
 
 
@@ -55,7 +56,6 @@ height: 100vh;
 
 .main-section article {
   padding-left: 20px;
-  background-color: #f9f2f2;
   padding-top: 10px;
 }
 
@@ -63,4 +63,39 @@ height: 100vh;
   background-color: green;
   color: white;
   padding: 10px;
+}
+
+.javascript {
+  background-color: #313131;
+  border-radius: 10px;
+  color: #ccc;
+}
+
+.hljs-string, .hljs-subst{
+  color: #7ec699;
+}
+
+.hljs-keyword {
+  color: #cc99cd;
+}
+
+.hljs-number {
+  color: #f08d49;
+}
+
+.hljs-built_in {
+  color: #f08d49;
+}
+
+
+@media only screen and (max-width: 500px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #nav-bar {
+    min-height: 400px;
+  }
+
 }
