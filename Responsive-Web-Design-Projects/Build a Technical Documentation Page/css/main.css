@@ -59,6 +59,10 @@ height: 100vh;
   padding-top: 10px;
 }
 
+article ul {
+  margin-left: 40px;
+}
+
 .section-header {
   background-color: green;
   color: white;
@@ -85,6 +89,14 @@ height: 100vh;
 
 .hljs-built_in {
   color: #f08d49;
+}
+
+.codespan {
+    color: crimson;
+    background-color: #f1f1f1;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 110%;
 }
 
 

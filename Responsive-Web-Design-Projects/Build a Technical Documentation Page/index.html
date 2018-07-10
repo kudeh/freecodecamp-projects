@@ -47,7 +47,7 @@
         many connections can be handled concurrently. Upon each connection the callback
         is fired, but if there is no work to be done, Node will sleep.
       </p>
-      <pre >
+      <pre>
         <code class="javascript">
   const http = require('http');
 
@@ -80,11 +80,35 @@
       <h2>Modules</h2>
     </header>
     <article>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
-
-Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
+      <p>
+        Consider modules to be the same as JavaScript libraries.
+        A set of functions you want to include in your application.
+      </p><br />
+      <h4>Build-in Modules</h4>
+      <p>
+        Node.js has a set of built-in modules which you can use without any further installation.
+        Look at this <a href="https://www.w3schools.com/nodejs/ref_modules.asp">Built-in Modules Reference</a> for a complete list of modules.
+        You can Include a module as shown in the below code sample. Then you can use it in your own code.
+      </p>
+      <pre>
+        <code class="javascript">
+var http = require('http');
+        </code>
+      </pre>
+      <h4>Create your own modules</h4>
+      <p>
+        You can create your own modules, and easily include them in your applications by
+        using the <code class="codespan">exports</code> keyword to make properties and methods available outside the module file.
+        The following example creates a module that returns a date and time object:
+     </p>
+     <pre>
+       <code class="javascript">
+exports.myDateTime = function () {
+   return Date();
+};
+       </code>
+     </pre>
+     <p></p>
     </article>
   </section>
   <section class="main-section" id="http_module">
@@ -92,11 +116,29 @@ Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sa
       <h2>HTTP Module</h2>
     </header>
     <article>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-      Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
-
-      Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
+      <p>Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+         To include the HTTP module, use the <code class="codespan">require()</code> method:
+      </p>
+      <pre>
+        <code class="javascript">
+var http = require('http');
+        </code>
+      </pre>
+      <h4>Node.js as a Web Server</h4>
+      <p>The HTTP module can create an HTTP server that listens to server ports and gives a response back to the client.
+        Use the <code class="codespan">createServer()</code> method to create an HTTP server as shown below.
+        You can then add HTTP header, read the qurery string from the <code class="codespan">req</code> argument etc.
+      </p>
+      <pre>
+        <code>
+var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(req.url);
+    res.end();
+}).listen(8080);
+        </code>
+      </pre>
     </article>
   </section>
   <section class="main-section" id="file_system_module">
@@ -104,12 +146,69 @@ Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sa
       <h2>File System Module</h2>
     </header>
     <article>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at enim vitae erat molestie tempor. Aliquam ac odio accumsan lacus dignissim tempor. Maecenas aliquam diam sed efficitur aliquam. Praesent vitae eleifend leo. Ut mattis semper erat in auctor. Proin eleifend lacus nec vulputate aliquet. Mauris malesuada rutrum condimentum. Nam id mollis urna, facilisis pretium urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      <p>The Node.js file system module allows you to work with the file system on your computer.
+         To include the File System module, use the <code class="codespan">require()</code> method:
+      </p>
+      <pre>
+        <code class="javascript">
+var fs = require('fs');
+        </code>
+      </pre>
+      <p>Common use for the File System module:</p>
+      <ul>
+        <li>Read files</li>
+        <li>Create files</li>
+        <li>Update files</li>
+        <li>Delete files</li>
+        <li>Rename files</li>
+      </ul><br />
+      <p>The <code class="codespan">fs.readFile()</code> method is used to read files on your computer. As shown below: </p>
+      <pre>
+        <code class="javascript">
+fs.readFile('demofile1.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+});
+        </code>
+      </pre>
 
-Aliquam maximus eleifend risus rhoncus porttitor. Aenean vel enim ipsum. Vestibulum eu turpis in purus sagittis hendrerit dictum sed tellus. Phasellus non mattis sapien. Integer pulvinar, odio a sagittis lobortis, ipsum justo auctor justo, sit amet venenatis dui eros quis nibh. Sed non ligula in risus vulputate luctus. Pellentesque id quam augue.
+      <p>The <code class="codespan">fs.appendFile()</code> method is used to append text to files on your computer. As shown below: </p>
+      <pre>
+        <code class="javascript">
+fs.appendFile('mynewfile1.txt', 'Hello content!', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+        </code>
+      </pre>
 
-Fusce maximus est non mauris volutpat cursus. Nam vestibulum congue metus, id sagittis augue vestibulum a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent mollis, orci id efficitur mollis, dolor tellus consectetur lacus, sit amet fringilla elit elit vel urna. Cras sagittis ultricies risus. Nam pharetra gravida quam, ac ultricies elit varius eget. Sed sollicitudin, risus id fringilla placerat, quam nibh vulputate sem, quis malesuada lacus lacus non quam. Mauris fermentum lacus erat, vel luctus sapien pretium nec. Fusce leo sem, dictum eu dapibus non, maximus aliquam tortor. Sed ac magna sit amet quam condimentum vehicula quis et enim. Vivamus porta blandit faucibus. Suspendisse lobortis molestie tellus quis blandit.</p>
+      <p>The <code class="codespan">fs.open()</code> method takes a "flag" as the second argument,
+        if the flag is "w" for "writing", the specified file is opened for writing.
+         If the file does not exist, an empty file is created:</p>
+      <pre>
+        <code class="javascript">
+fs.open('mynewfile2.txt', 'w', function (err, file) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+        </code>
+      </pre>
+
+      <p>The <code class="codespan">fs.writeFile()</code> method replaces the specified file
+        and content if it exists. If the file does not exist, a new file, containing the
+        specified content, will be created:</p>
+      <pre>
+        <code class="javascript">
+fs.writeFile('mynewfile3.txt', 'Hello content!', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+        </code>
+      </pre>
+
     </article>
+
   </section>
   <section class="main-section" id="url_module">
     <header class="section-header">
