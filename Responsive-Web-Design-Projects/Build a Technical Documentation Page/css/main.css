@@ -44,6 +44,29 @@ height: 100vh;
   color: white;
 }
 
+#toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4.5rem;
+    height: 3.05rem;
+    color: white;
+    background-color: green;
+    border: none;
+  }
+
+  .is-open {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .v-width {
+    display: flex;
+  }
+
 #main-doc {
   height: 100vh;
   overflow-y: scroll;
@@ -111,12 +134,21 @@ article ul {
 
 @media only screen and (max-width: 500px) {
   body {
-    display: flex;
-    flex-direction: column;
+    display: grid;
   }
 
-  #nav-bar {
+  #navbar {
     min-height: 400px;
+  }
+
+  #toggle {
+    position: fixed;
+    top: 0px;
+    display: flex;
+  }
+
+  #navbar {
+    display: none;
   }
 
 }
