@@ -51,11 +51,11 @@ height: 100vh;
     position: absolute;
     top: 0;
     right: 0;
-    width: 4.5rem;
     height: 3.05rem;
     color: white;
     background-color: green;
     border: none;
+    padding: 0 5px 0 5px;
   }
 
   .is-open {
