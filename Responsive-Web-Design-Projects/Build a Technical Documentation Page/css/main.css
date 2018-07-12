@@ -90,6 +90,8 @@ article ul {
   background-color: green;
   color: white;
   padding: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .javascript {
