@@ -44,6 +44,7 @@ body {
   padding: 5px;
   height: 100%;
   font-size: 1.25em;
+  font-family: var(--header-font-family);
 }
 
 #navbar ul {
@@ -76,11 +77,23 @@ body {
   font-size: 1.5em;
 }
 
+#pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  border: 5px solid var(--theme-color);
+  margin-bottom: 5px;
+}
+
 .hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 30%;
+}
+
+.hero-text h1 {
+  font-family: var(--header-font-family);
 }
 
 .ul-social {
@@ -123,7 +136,7 @@ section h2 {
   font-size: 2.5em;
   margin-bottom: 10px;
   color: var(--header-font-color);
-  font-family: var(--header-font-family)
+  font-family: var(--header-font-family);
 }
 
 .row {
