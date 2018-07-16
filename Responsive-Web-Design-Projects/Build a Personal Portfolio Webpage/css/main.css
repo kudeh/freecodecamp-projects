@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Prata');
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +11,8 @@
   --theme-color: white;
   --info-font-color: #666;
   --header-font-color: #212121;
+  --info-font-family: 'Montserrat', sans-serif;
+  --header-font-family: 'Prata', serif;
 }
 
 body {
@@ -16,6 +20,7 @@ body {
   flex-direction: column;
   justify-content: center;
   background-color: #F4F4F4;
+  font-family: var(--info-font-family);
 }
 
 .list-unstyled {
@@ -110,4 +115,33 @@ section {
   padding: 20px;
   background-color: var(--theme-color);
   border-radius: 5px;
+  color: var(--info-font-color);
+  font-size: 1.25em;
+}
+
+section h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: var(--header-font-color);
+  font-family: var(--header-font-family)
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col-4 {
+  width: 33.33;
+}
+.col-8 {
+  width: 66.67%;
+}
+
+.bold {
+  color: var(--header-font-color);
+}
+
+p, .about-item {
+  padding: 8px;
 }
