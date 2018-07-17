@@ -37,7 +37,7 @@ body {
   height: 45px;
   background-color: var(--theme-background-color);
   color: var(--theme-color);
-  border-bottom: 1px solid var(--theme-color);
+  /*border-bottom: 1px solid var(--theme-color);*/
 }
 
 #navbar header {
@@ -158,12 +158,15 @@ section h2 {
 .col-4 {
   width: 33.33;
 }
+
+
 .col-8 {
   width: 66.67%;
 }
 
 .bold {
   color: var(--header-font-color);
+  font-weight: bold;
 }
 
 p, .about-item {
@@ -192,14 +195,66 @@ td {
   width: 100%;
 }
 
-.edu-type {
+.edu-type, .experience-header {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 
+.language-name {
+  display: inline-block;
+  width: 8rem;
+}
+
+.lang-star{
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 2px;
+  margin-top: -3px;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 1px solid #d8d8d8;
+}
+
+.lang-star-filled {
+  background-color: var(--theme-background-color);
+}
+
+.frameworks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.framework-circle {
+    display: inline-block;
+    border: 1px solid var(--info-font-color);
+    height: 9rem;
+    width: 9rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
 @media only screen and (max-width: 500px) {
   tr {
     flex-wrap: wrap;
+  }
+
+  .row, .skills {
+    flex-wrap: wrap;
+  }
+
+
+  #navbar,.framework-circle, .project-image, form {
+    display: none;
   }
 }
