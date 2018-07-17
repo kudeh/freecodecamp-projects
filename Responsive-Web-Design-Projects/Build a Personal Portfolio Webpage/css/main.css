@@ -42,8 +42,6 @@ body {
 
 #navbar header {
   padding: 5px;
-  height: 100%;
-  font-size: 1.25em;
   font-family: var(--header-font-family);
 }
 
@@ -106,6 +104,20 @@ body {
 
 .social {
   color: white;
+  text-decoration: none;
+}
+
+#portfolio-link {
+  border-radius: 15px;
+  background-color: var(--header-font-color);
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 0.8em;
+}
+
+#portfolio-link:hover {
+  background-color: var(--info-font-color)
 }
 
 #down-arrow{
@@ -129,7 +141,6 @@ section {
   background-color: var(--theme-color);
   border-radius: 5px;
   color: var(--info-font-color);
-  font-size: 1.25em;
 }
 
 section h2 {
@@ -157,4 +168,38 @@ section h2 {
 
 p, .about-item {
   padding: 8px;
+}
+
+table{
+  width: 100%;
+}
+
+tr{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+  padding-bottom: 15px;
+}
+
+.education-order {
+  font-size: 1.75em;
+  width: 100px;
+  margin-right: 30px;
+}
+
+td {
+  width: 100%;
+}
+
+.edu-type {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+@media only screen and (max-width: 500px) {
+  tr {
+    flex-wrap: wrap;
+  }
 }
