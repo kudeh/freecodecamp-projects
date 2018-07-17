@@ -10,10 +10,10 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css" />
 </head>
-<body>
+<body id="body">
 	<nav id="navbar">
 		<header>
-			<h3>KENE UDEH</h3>
+			<h3><a id="link-to-top" href="#body">KENE UDEH</a></h3>
 		</header>
 		<ul class="list-unstyled">
 			<a class="nav-link" href="#about" rel="internal"><li>About Me</li></a>
@@ -153,7 +153,7 @@
 		<section id="skills">
 			<h2>Skills</h2>
 			<div class="row skillset">
-				<div class="col-6">
+				<div class="skills-container">
 					<h3>Languages</h3>
 					<ul class="list-unstyled language-list">
 						<li class="language-item">
@@ -223,7 +223,7 @@
 						</li>
 					</ul>
 				</div>
-				<div class="col-6">
+				<div class="skills-container">
 					<ul class="frameworks list-unstyled" aria-label="Frameworks">
 						<h3>Frameworks</h3>
 						<li class="language-item">
@@ -395,16 +395,16 @@
 				<div class="col-6">
 					<p>If you want to get in touch with me, feel free to drop me a message. I'll respond as soon as I can.</p>
 					<ul class="list-unstyled">
-						<li class="li-social-links">
+						<li class="contact-social-links">
 							<a class="social" href="https://github.com/kudeh" target="_blank"><i class="fab fa-github" aria-hidden="true"></i>Github</a>
 						</li>
-						<li class="li-social-links">
+						<li class="contact-social-links">
 							<a class="social" href="https://www.linkedin.com/in/kudeh/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
 						</li>
-						<li class="li-social-links">
+						<li class="contact-social-links">
 							<a class="social" href="https://twitter.com/kene_udeh" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i>Twitter</a>
 						</li>
-						<li class="li-social-links">
+						<li class="contact-social-links">
 							<a class="social" href="https://www.freecodecamp.org/kudeh001" target="_blank"><i class="fab fa-free-code-camp" aria-hidden="true"></i>freeCodeCamp</a>
 						</li>
 					</ul>
@@ -414,6 +414,7 @@
 						<input type="text" name="name" value="" placeholder="name*">
 						<input type="email" name="email" value="" placeholder="email*">
 						<textarea name="message" rows="8" cols="80" placeholder="message*"></textarea>
+						<button type="submit" name="button" id="submit-button">Send Message</button>
 					</form>
 				</div>
 			</div>

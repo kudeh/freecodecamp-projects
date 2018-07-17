@@ -45,6 +45,11 @@ body {
   font-family: var(--header-font-family);
 }
 
+#link-to-top {
+  text-decoration: none;
+  color: var(--theme-color);
+}
+
 #navbar ul {
   display: flex;
   flex-direction: row;
@@ -164,11 +169,11 @@ section h2 {
   width: 66.67%;
 }
 
-.col-6 {
+.skills-container {
   padding: 15px;
 }
 
-.col-6 h3 {
+.skills-container h3 {
   text-align: center;
   text-decoration: underline;
 }
@@ -253,6 +258,35 @@ td {
   text-align: center;
 }
 
+.contact-social-links a{
+  color: black;
+}
+
+.contact-social-links a i{
+  padding: 7px;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+input, textarea {
+  padding: 10px;
+  margin: 5px;
+  max-width: 300px;
+}
+
+#submit-button {
+  align-self: center;
+  padding: 10px;
+  border-radius: 30%;
+  font-size: 1.10em;
+  background-color: var(--theme-background-color);
+  color: var(--theme-color);
+}
+
 @media only screen and (max-width: 500px) {
   tr {
     flex-wrap: wrap;
@@ -267,7 +301,7 @@ td {
   }
 
 
-  #navbar,.framework-circle, form {
+  #navbar {
     display: none;
   }
 }
