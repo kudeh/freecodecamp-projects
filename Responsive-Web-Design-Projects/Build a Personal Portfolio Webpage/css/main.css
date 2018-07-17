@@ -258,6 +258,29 @@ td {
   text-align: center;
 }
 
+
+#project-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 310px;
+  margin: 5px;
+}
+
+.project-description-section{
+  display: none;
+}
+
+.project-description-section p {
+  height: 2rem;
+}
+
 .contact-social-links a{
   color: black;
 }
