@@ -295,11 +295,13 @@ td {
   max-width: 300px;
   margin: 10px 5px 10px 5px;
   background-color: black;
+  border-radius: 10px;
 }
 
 .project-image {
-  max-width: 300px;
-  max-height: 300px;
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
 }
 
 .project-caption {
@@ -357,6 +359,22 @@ input, textarea {
   font-size: 1.10em;
   background-color: var(--theme-background-color);
   color: var(--theme-color);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#up-arrow {
+  background-color: white;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+#up-arrow a {
+  color: var(--theme-background-color);
 }
 
 @media only screen and (max-width: 500px) {
