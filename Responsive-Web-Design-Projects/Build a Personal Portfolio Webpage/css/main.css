@@ -282,14 +282,14 @@ td {
 }
 
 
-#project-tile {
+#project-grid {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.project-card {
+.project-tile {
   display: flex;
   flex-direction: column;
   max-width: 300px;
