@@ -27,6 +27,29 @@ body {
   list-style: none;
 }
 
+#toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 3.05rem;
+    color: white;
+    background-color: var(--theme-background-color);
+    border: none;
+    padding: 0 5px 0 5px;
+  }
+
+  .is-open {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .v-width {
+    display: flex;
+  }
+
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -92,7 +115,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30%;
+  margin-top: 20%;
 }
 
 .hero-text h1 {
@@ -259,7 +282,7 @@ td {
 }
 
 
-#project-grid {
+#project-tile {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -269,16 +292,42 @@ td {
 .project-card {
   display: flex;
   flex-direction: column;
-  max-width: 310px;
-  margin: 5px;
+  max-width: 300px;
+  margin: 10px 5px 10px 5px;
+  background-color: black;
+}
+
+.project-image {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.project-caption {
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--theme-background-color);
+  color: var(--theme-color);
 }
 
 .project-description-section{
-  display: none;
+  /*display: none;*/
+  width: 100%;
 }
 
 .project-description-section p {
   height: 2rem;
+}
+
+.project-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.project-view a {
+  text-decoration: underline;
+  color: white;
+  font-weight: bold;
 }
 
 .contact-social-links a{
@@ -298,7 +347,7 @@ td {
 input, textarea {
   padding: 10px;
   margin: 5px;
-  max-width: 300px;
+  max-width: 280px;
 }
 
 #submit-button {
@@ -323,8 +372,27 @@ input, textarea {
     width: 5rem;
   }
 
+  #navbar {
+    min-height: 400px;
+  }
+
+  #toggle {
+    position: fixed;
+    top: 0px;
+    display: flex;
+  }
 
   #navbar {
     display: none;
   }
+
+  #nav {
+    display: flex !important;
+    flex-direction: column  !important;
+  }
+
+  .skills-list {
+    list-style-type: none;
+  }
+
 }

@@ -9,21 +9,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css" />
+	<script src="js/script.js"></script>
 </head>
 <body id="body">
+	<i id="toggle" class="fas fa-2x fa-bars"></i>
 	<nav id="navbar">
 		<header>
 			<h3><a id="link-to-top" href="#body">KENE UDEH</a></h3>
 		</header>
-		<ul class="list-unstyled">
+		<ul id="nav" class="list-unstyled">
 			<a class="nav-link" href="#about" rel="internal"><li>About Me</li></a>
 			<a class="nav-link" href="#education" rel="internal"><li>Education</li></a>
 			<a class="nav-link" href="#experience" rel="internal"><li>Experience</li></a>
 			<a class="nav-link" href="#skills" rel="internal"><li>Skills</li></a>
-			<a class="nav-link" href="#portfolio" rel="internal"><li>Portfolio</li></a>
+			<a class="nav-link" href="#projects" rel="internal"><li>Projects</li></a>
 			<a class="nav-link" href="#contact" rel="internal"><li>Contact Me</li></a>
 		</ul>
 	</nav>
+	<div id="container">
 	<header id="welcome-section">
 
 		<div class="hero-text">
@@ -309,19 +312,18 @@
 					</ul>
 				</div>
 		</section>
-		<section id="portfolio">
-			<h2>Portfolio</h2>
-			<div id="project-grid">
+		<section id="projects">
+			<h2>Projects</h2>
+			<div id="project-tile">
 				<div class="project-card">
 					<figure class="project-frame">
 						<img class="project-image" src="http://via.placeholder.com/300x300" alt="tribute page image">
 						<figcaption class="project-caption">Tribute Page</figcaption>
 					</figure>
 					<div class="project-description-section">
-						<p>Tribute Page for the Nigerian Musician Fela</p>
 						<div class="project-view">
-							<a href="https://s.codepen.io/kudeh/debug/mwrdNe/xJkjOqbbEqdM">Project</a>
-							<a href="https://github.com/kudeh/My-FreeCodeCamp-Projects/tree/master/Responsive-Web-Design-Projects/Build%20a%20Tribute%20Page">Code</a>
+							<a target="_blank" href="https://s.codepen.io/kudeh/debug/mwrdNe/xJkjOqbbEqdM">Project</a>
+							<a target="_blank" href="https://github.com/kudeh/My-FreeCodeCamp-Projects/tree/master/Responsive-Web-Design-Projects/Build%20a%20Tribute%20Page">Code</a>
 						</div>
 					</div>
 				</div>
@@ -331,10 +333,9 @@
 						<figcaption class="project-caption">Survey Form</figcaption>
 					</figure>
 					<div class="project-description-section">
-						<p>Survey Form For the Avengers.</p>
 						<div class="project-view">
-							<a href="https://s.codepen.io/kudeh/debug/wXgBrG/bZAQWNjjwEzM">Project</a>
-							<a href="https://github.com/kudeh/My-FreeCodeCamp-Projects/tree/master/Responsive-Web-Design-Projects/Build%20a%20Survey%20Form">Code</a>
+							<a target="_blank" href="https://s.codepen.io/kudeh/debug/wXgBrG/bZAQWNjjwEzM">Project</a>
+							<a target="_blank" href="https://github.com/kudeh/My-FreeCodeCamp-Projects/tree/master/Responsive-Web-Design-Projects/Build%20a%20Survey%20Form">Code</a>
 						</div>
 					</div>
 				</div>
@@ -344,10 +345,9 @@
 						<figcaption class="project-caption">Product Landing Page</figcaption>
 					</figure>
 					<div class="project-description-section">
-						<p>Product Landing Page For Nigeria World Cup Club.</p>
 						<div class="project-view">
-							<a href="https://s.codepen.io/kudeh/debug/mKWqQK/vWARwaWWNGjk">Project</a>
-							<a href="https://github.com/kudeh/My-FreeCodeCamp-Projects/tree/master/Responsive-Web-Design-Projects/Build%20a%20Product%20Landing%20Page">Code</a>
+							<a target="_blank" href="https://s.codepen.io/kudeh/debug/mKWqQK/vWARwaWWNGjk">Project</a>
+							<a target="_blank" href="https://github.com/kudeh/My-FreeCodeCamp-Projects/tree/master/Responsive-Web-Design-Projects/Build%20a%20Product%20Landing%20Page">Code</a>
 						</div>
 					</div>
 				</div>
@@ -357,10 +357,9 @@
 						<figcaption class="project-caption">Technical Documentation</figcaption>
 					</figure>
 					<div class="project-description-section">
-						<p>Node.js Technical Documentation Page.</p>
 						<div class="project-view">
-							<a href="https://s.codepen.io/kudeh/debug/gjYVLR/NQAzYqvKJYRr">Project</a>
-							<a href="https://github.com/kudeh/My-FreeCodeCamp-Projects/tree/master/Responsive-Web-Design-Projects/Build%20a%20Technical%20Documentation%20Page">Code</a>
+							<a target="_blank" href="https://s.codepen.io/kudeh/debug/gjYVLR/NQAzYqvKJYRr">Project</a>
+							<a target="_blank" href="https://github.com/kudeh/My-FreeCodeCamp-Projects/tree/master/Responsive-Web-Design-Projects/Build%20a%20Technical%20Documentation%20Page">Code</a>
 						</div>
 					</div>
 				</div>
@@ -370,10 +369,9 @@
 						<figcaption class="project-caption">Portfolio Page</figcaption>
 					</figure>
 					<div class="project-description-section">
-						<p>My Personal Portfolio Page.</p>
 						<div class="project-view">
-							<a href="https://s.codepen.io/kudeh/debug/VWPvWX/vWkRwaWWNojM">Project</a>
-							<a href="https://github.com/kudeh/My-FreeCodeCamp-Projects/tree/master/Responsive-Web-Design-Projects/Build%20a%20Personal%20Portfolio%20Webpage">Code</a>
+							<a target="_blank" href="https://s.codepen.io/kudeh/debug/VWPvWX/vWkRwaWWNojM">Project</a>
+							<a target="_blank" href="https://github.com/kudeh/My-FreeCodeCamp-Projects/tree/master/Responsive-Web-Design-Projects/Build%20a%20Personal%20Portfolio%20Webpage">Code</a>
 						</div>
 					</div>
 				</div>
@@ -383,10 +381,9 @@
 						<figcaption class="project-caption">Worldcup 2018</figcaption>
 					</figure>
 					<div class="project-description-section">
-						<p>FIFA World Cup 2018. Worked in a team to build world cup website. Built the Fixtures Section</p>
 						<div class="project-view">
-							<a href="https://zero-to-mastery.github.io/worldcup-2018/fixtures">Project</a>
-							<a href="https://github.com/kudeh/worldcup-2018">Code</a>
+							<a target="_blank" href="https://zero-to-mastery.github.io/worldcup-2018/fixtures">Project</a>
+							<a target="_blank" href="https://github.com/kudeh/worldcup-2018">Code</a>
 						</div>
 					</div>
 				</div>
@@ -399,7 +396,7 @@
 					<p>If you want to get in touch with me, feel free to drop me a message. I'll respond as soon as I can.</p>
 					<ul class="list-unstyled">
 						<li class="contact-social-links">
-							<a class="social" href="https://github.com/kudeh" target="_blank"><i class="fab fa-github" aria-hidden="true"></i>Github</a>
+							<a id="#profile-link" class="social" href="https://github.com/kudeh" target="_blank"><i class="fab fa-github" aria-hidden="true"></i>Github</a>
 						</li>
 						<li class="contact-social-links">
 							<a class="social" href="https://www.linkedin.com/in/kudeh/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
@@ -426,5 +423,7 @@
 			</div>
 		</section>
 	</main>
+
+</div>
 </body>
 </html>
