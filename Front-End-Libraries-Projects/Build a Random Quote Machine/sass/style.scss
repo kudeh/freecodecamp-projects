@@ -35,6 +35,20 @@ body {
     color:#fff;
   }
 }
+
+#header {
+  border-radius:3px;
+  position:relative;
+  width:450px;
+  padding:40px 50px;
+  display:table;
+  background-color:#fff;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
 #quote-box {
   border-radius:3px;
   position:relative;
