@@ -1,50 +1,98 @@
-$(document).ready(function(){
+const projectName = "random-quote-machine";
+localStorage.setItem('example_project', 'Randowm Quote Machine');
+let quotesData;
 
-  $("#new-quote").click(function(){
-   
-   //Retrieve random quote from API.
-   $.ajax({
-    url: "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", 
-    type: 'GET',
-    dataType: 'json',
-    cache: false,
-    success : function(data){
-      console.log(data[0]);
-      
-      var author = data[0].title;
-      var quote = data[0].content;
-      
-      $(".author").empty();
-      $(".quote").empty();
-      
-      $(".author").append("<p>- "+author+"</p>");
-      $(".quote").append(quote);
-      
-      //strip out html tags from the string quote.
-      var div = document.createElement("div");
-      div.innerHTML = quote;      
-      quote = div.textContent || div.innerText || "";
-      
-      console.log(quote + " " + author);
-      
-      updateTwitterValues(quote, author);
+/*
+Code by Gabriel Nunes
+Modified by Todd Chaffee to use Camper gist for JSON Quote data.
+*/
 
-      
+function inIframe () { try { return window.self !== window.top; } catch (e) { return true; } }
+
+var colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
+var currentQuote = '', currentAuthor = '';
+function openURL(url){
+  window.open(url, 'Share', 'width=550, height=400, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=0');
+}
+
+function getQuotes() {
+  return $.ajax({
+    headers: {
+      Accept: "application/json"
     },
-    error: function(request,error)
+    url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=25',
+    success: function(jsonQuotes) {
+      //if (typeof jsonQuotes === 'string') {
+      quotesData = jsonQuotes;//JSON.parse(jsonQuotes);
+      console.log('quotesData');
+      console.log(quotesData);
+      //}
+    }
+  });
+}
+
+function getRandomQuote() {
+  return quotesData[Math.floor(Math.random() * quotesData.length)];
+}
+
+function getQuote() {
+
+  let randomQuote = getRandomQuote();
+
+  currentQuote = randomQuote.content;
+  currentAuthor = randomQuote.title;
+
+  if(inIframe())
+  {
+    $('#tweet-quote').attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
+
+  }
+
+  $(".quote-text").animate(
+    { opacity: 0 },
+    500,
+    function() {
+      $(this).animate({ opacity: 1}, 500);
+      $('#text').html(randomQuote.content);
+    }
+  );
+
+  $(".quote-author").animate(
+    { opacity: 0 },
+    500,
+    function() {
+      $(this).animate({ opacity: 1}, 500);
+      $('#author').text(randomQuote.title);
+    }
+  );
+
+  var color = Math.floor(Math.random() * colors.length);
+  $("html body").animate(
     {
-      console.log("error");
+      backgroundColor: colors[color],
+      color: colors[color]
+    },
+    1000
+  );
+  $(".button").animate(
+    {
+      backgroundColor: colors[color]
+    },
+    1000
+  );
+}
+
+$(document).ready(function() {
+  getQuotes().then(() => {
+    getQuote();
+  });
+
+  $('#new-quote').on('click', getQuote);
+
+  $('#tweet-quote').on('click', function() {
+    if(!inIframe()) {
+      openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
     }
   });
 
- });
-  
 });
-
-//update twitter share link.
-function updateTwitterValues(quote, author) {
-// clear out the <a> tag that's currently there...probably don't really need this since you're replacing whatever is in there already.
-  $("#share").html('&nbsp;'); 
-  $("#share").html('<a href="https://twitter.com/intent/tweet?text='+encodeURIComponent(quote)+'%20%2D%20'+encodeURIComponent(author)+'" class="twitter-share-button" data-size="large" data-url="https://codepen.io/kudeh/full/vJrbpJ/">Tweet</a>');
-twttr.widgets.load();
-}

@@ -1,76 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="en">
 
-	<title>Kene Udeh - Portfolio</title>
+	<title>QuotePool</title>
 	<meta charset="UTF-8" />
 	<meta name="description" content="QuotePool" />
 	<meta name="keywords" content="quotes, random quotes, quotepool" />
 	<meta name="author" content="Kene Udeh" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" />
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/script.js"></script>
-  <script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));</script>
 
 </head>
 <body>
 
-<div class="container">
-  
-  <div id="header" class="row">
-    <h1>QuotePool</h1>
-    <p><em>Welcome to QuotePool, your one stop site for getting random quotes as you go along your day. Enjoy the experience and make sure to share your favorites.</em></p>
-  </div>
-  
-  <div class="row">
-    <button id="new-quote" class="btn btn-large btn-info">New Quote</button>
-  </div>
-  
-  <div class="row">
-    <div class="quote-block">
-      <div class="quote">
-        Quotepool is the best website for daily quotes!!
-      </div>
-      <div class="author">
-        - Anon
-      </div>
-    </div>
-  </div>
-  
-  <div id="share" class="row">
-  <a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text=Quotepool%20is%20the best%20website%20for%20daily%20quotes%21%21%20%2D%20Anon" data-size="large" data-url="https://codepen.io/kudeh/full/vJrbpJ/">
-Tweet</a>
-  </div>
-
-</div>
-
-  <footer id="footer">
-    <h4>2017 &#169; 
-          <a href="https://www.linkedin.com/in/kudeh" target="_blank"> Kene Udeh</a> / A FreeCodeCamp Project 
-      </h4>
-  </footer>
+	<div id="wrapper">
+		<div id="header">
+			<h1>QuotePool</h1>
+		</div>
+	  <div id="quote-box">
+	    <div class="quote-text">
+	      <i class="fa fa-quote-left"> </i><span id="text"></span>
+	    </div>
+	    <div class="quote-author">
+	      - <span id="author"></span>
+	    </div>
+	    <div class="buttons">
+	      <a class="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
+	        <i class="fab fa-twitter"></i>
+	      </a>
+	      <button class="button" id="new-quote"><i class="fas fa-redo-alt fa-2x"></i></button>
+	    </div>
+	  </div>
+	  <div class="footer"> by <a href="https://github.com/kudeh">kene udeh</a></div>
+	</div>
 
 </body>
 </html>
