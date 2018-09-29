@@ -28,8 +28,8 @@ function(err, data) {
    //set chart footer info text?
 
    //create array of year-Quater mapping from data for ToolTip
-   var yearsQuaters = data.data.map(function(item) {
-     var quater;
+   var yearsQuarters = data.data.map(function(item) {
+     var quarter;
      var month = item[0].substring(5, 7);
 
      switch (month) {
@@ -50,7 +50,7 @@ function(err, data) {
      return item[0].substring(0, 4) + ' ' + quarter;
    });
    //create array of year as ints for x-axis
-   var yearsDigits = yearsQuaters.map(function(item){
+   var yearsDigits = yearsQuarters.map(function(item){
      return item.substring(0, 4);
    });
 
@@ -75,17 +75,52 @@ function(err, data) {
    //get min & max from GDP array
    var minGDP = d3.min(GDP);
    var maxGDP = d3.max(GDP);
+   //scaleGDP values
+   var linearScale = d3.scaleLinear()
+    .domain([minGDP, maxGDP])
+    .range([(minGDP/maxGDP) * height, height]);
+
+   var scaledGDP = GDP.map(function(item) {
+       return linearScale(item);
+   });
    //set scale for y-axis
    var yScale = d3.scaleLinear()
                   .domain([minGDP, maxGDP])
-                  .range([(minGDP/maxGDP)*height, height]);
+                  .range([height, (minGDP/maxGDP)*height]);
    //set yAxis
    var yAxis = d3.axisLeft(yScale);
    //set yAxisGroup
-   
+   var yAxisGroup = svgContainer.append('g')
+                                .call(yAxis)
+                                .attr("id", "y-axis")
+                                .attr("transform", "translate(60, 0)")
    //add bars to Chart
-   //add effects for tooltips and overlays
+   d3.select('svg').selectAll('rect')
+                    .data(scaledGDP)
+                    .enter()
+                    .append('rect')
+                    .attr('data-date', (d, i) => {
+                      return data.data[i][0];
+                    })
+                    .attr('data-gdp', (d, i) => {
+                      return data.data[i][1];
+                    })
+                    .attr('class', 'bar')
+                    .attr('x', (d, i) => {
+                      return i * barWidth;
+                    })
+                    .attr('y', (d, i) => {
+                      return height - d;
+                    })
+                    .attr('width', barWidth)
+                    .attr('height', (d) => {
+                      return d;
+                    })
+                    .style('fill', '#33ADFF')
+                    .attr('transform', 'translate(60, 0)')
+                    //add effects for tooltips and overlays
+                    .on('mouseover', function(d, i) {
 
-   console.log(data);
+                    })
 
 });
