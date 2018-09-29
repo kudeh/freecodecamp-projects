@@ -24,8 +24,26 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
 function(err, data) {
 
    //set y-axis description text?
+   svgContainer.append('text')
+    .attr('transform', 'rotate(-90)')
+    .attr('x', -200)
+    .attr('y', 15)
+    .text('GDP')
+    .attr('class', 'axis-label-title');
+
+    //set y-axis description text?
+    svgContainer.append('text')
+     .attr('x', width/2)
+     .attr('y', height+35)
+     .text('Year Quarter')
+     .attr('class', 'axis-label-title');
 
    //set chart footer info text?
+   svgContainer.append('text')
+    .attr('x', width/2 + 120)
+    .attr('y', height + 50)
+    .text('More Information: http://www.bea.gov/national/pdf/nipaguid.pdf')
+    .attr('class', 'info');
 
    //create array of year-Quater mapping from data for ToolTip
    var yearsQuarters = data.data.map(function(item) {
