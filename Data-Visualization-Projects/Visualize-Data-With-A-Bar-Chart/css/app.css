@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto";
+  background-color: #708090;
+  background-size: 64px 128px; }
+  .main .container {
+    height: 560px;
+    width: 900px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 20px;
+    align-self: center;
+    position: relative; }
+    @media (min-width: 1000px) {
+      .main .container {
+        box-shadow: 2px 2px 20px; } }
+    .main .container #title {
+      text-align: center;
+      font-size: 2.5em; }
+    .main .container .visHolder {
+      position: absolute;
+      top: 6em; }
