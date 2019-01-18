@@ -15,13 +15,18 @@ app.get('/timestamp', function(req, res){
 app.get('/timestamp/:date_string', function(req, res){
 
     var input_date = req.params.date_string;
-    var date = new Date(input_date);
-    var result = {}
+    var input_date_int = parseInt(input_date);
+
+    if(input_date_int){
+        input_date = new Date(input_date_int);
+    }else{
+        input_date = new Date(input_date);
+    }
+
+    var result = {"error": "Invalid Date"};
     
-    if(date.getTime()){
-        result = {"unix": date.getTime(), "utc": date.toUTCString()}
-    }else {
-        result = {"error": "Invalid Date"}
+    if(input_date.getTime()){
+        result = {"unix": input_date.getTime(), "utc": input_date.toUTCString()}
     }
        
     res.send(result);
