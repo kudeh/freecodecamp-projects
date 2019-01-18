@@ -6,14 +6,25 @@ app.get('/', function(req, res){
     res.sendFile(__dirname+'/views/index.html')
 })
 
-app.get('/:date_string', function(req, res){
+app.get('/timestamp', function(req, res){
 
-    var p = req.params.date_string;
+    var now = new Date();
+    res.send({"unix": now.getTime(), "utc": now.toUTCString()})
+})
+
+app.get('/timestamp/:date_string', function(req, res){
+
+    var input_date = req.params.date_string;
+    var date = new Date(input_date);
     var result = {}
-
+    
+    if(date.getTime()){
+        result = {"unix": date.getTime(), "utc": date.toUTCString()}
+    }else {
+        result = {"error": "Invalid Date"}
+    }
+       
     res.send(result);
-
-    console.log(p);
 })
 
 app.listen(process.env.PORT, () => console.log('App Listening On Port ${process.env.PORT}..'))
