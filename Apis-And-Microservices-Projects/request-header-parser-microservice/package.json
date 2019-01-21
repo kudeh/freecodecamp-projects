@@ -1,0 +1,14 @@
+{
+  "name": "request-header-parser-microservice",
+  "version": "1.0.0",
+  "description": "Request Header Parser Microservice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kene Udeh",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
