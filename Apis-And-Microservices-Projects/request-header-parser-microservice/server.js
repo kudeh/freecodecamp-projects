@@ -18,8 +18,8 @@ app.get('/api/whoami', function(req, res){
 
     var result_json = {};
     result_json["ipaddress"] = req.ip;
-    result_json["language"] = req.get('User-Agent');
-    result_json["software"] = req.get('Accept-Language');
+    result_json["language"] = req.get('Accept-Language');
+    result_json["software"] = req.get('User-Agent');
 
     res.send(result_json);
 })
