@@ -1,10 +1,13 @@
 require('dotenv').config()
 
-var express = require('express')
-var app = express()
+var cors = require('cors');
+var express = require('express');
+var app = express();
+
+app.use(cors({optionsSuccessStatus: 200}));
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname+'/views/index.html')
+    res.sendFile(__dirname+'/views/index.html');
 })
 
 app.get('/api/whoami', function(req, res){
@@ -18,5 +21,5 @@ app.get('/api/whoami', function(req, res){
 })
 
 var listener = app.listen(process.env.PORT, function(){
-    console.log('App is listening on ' + listener.address().port + '...')
+    console.log('App is listening on ' + listener.address().port + '...');
 })
