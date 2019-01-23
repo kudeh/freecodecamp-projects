@@ -5,8 +5,8 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+app.use('/', express.static('public'));
 app.use(cors({optionsSuccessStatus: 200}));
-app.use(express.static('public'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
