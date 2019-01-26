@@ -6,6 +6,17 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_URI);
+var Schema = mongoose.Schema;
+
+var shortUrlSchema = new Schema({
+    url: {type: String, required: true},
+    shorten: {type: Number, required: true}
+});
+
+var ShortUrl = mongoose.model('ShortUrl', shortUrlSchema);
+
 var isDomain = async (req, res, next) => {
 
     var url_to_shorten = req.body.url;
@@ -67,7 +78,7 @@ app.post('/api/shorturl/new', isValidUrl, function(req, res){
     if(req.isValid){
         res.send({"url": req.body.url, "shorturl": 1});
     }else {
-        res.send({"error": "invalid"});
+        res.send({"error": "Invalid URL"});
     }
 
     
