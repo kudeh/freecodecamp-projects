@@ -36,16 +36,14 @@ var isDomain = async (req, res, next) => {
         hints: dns.ADDRCONFIG | dns.V4MAPPED,
     };
 
-    try {
-        var data = await dns.lookup(domain, function(err, address, family){
+    dns.lookup(domain, function(err, address, family){
             req.domain = address;
             console.log(req.domain);
-        })
-    } catch (e) {
 
-    }
+            next();
+    });
 
-    next();
+    
 }
 
 /*
@@ -76,7 +74,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-//app.use('/api/shorturl/new', isDomain);
+app.use('/api/shorturl/new', isDomain);
 
 app.get('/', function(req, res){
     res.sendFile(__dirname+"/views/index.html");
@@ -89,33 +87,43 @@ app.post('/api/shorturl/new', isValidUrl, function(req, res){
     
     var url = req.body.url;
 
-    if(req.isValid){
+    if(!req.domain){
 
-        ShortUrl.findOne({url: url}).then(urlR => {
-            if(!urlR){
-                console.log("not found");
-
-                const short_url = new ShortUrl({
-                    url: url
-                });
-
-                short_url.save(function(err){
-                    if (err) return handleError(err);
-
-                    short_url.nextCount(function(err, count){
-                        res.send({original_url: url, short_url: count-1});
-                    });
-                });
-            }else {
-                res.send({original_url: url, short_url: urlR.short_url});
-            }
-        }).catch(error => {
-            next(error);
-        });
+        res.send({"error":"invalid Hostname"});
         
     }else {
-        res.send({"error": "invalid URL"});
+
+        if(req.isValid){
+
+            ShortUrl.findOne({url: url}).then(urlR => {
+                if(!urlR){
+                    console.log("not found");
+    
+                    const short_url = new ShortUrl({
+                        url: url
+                    });
+    
+                    short_url.save(function(err){
+                        if (err) return handleError(err);
+    
+                        short_url.nextCount(function(err, count){
+                            res.send({original_url: url, short_url: count-1});
+                        });
+                    });
+                }else {
+                    res.send({original_url: url, short_url: urlR.short_url});
+                }
+
+            }).catch(error => {
+                next(error);
+            });
+            
+        }else {
+            res.send({"error": "invalid URL"});
+        }
     }
+
+    
 
     
 })
