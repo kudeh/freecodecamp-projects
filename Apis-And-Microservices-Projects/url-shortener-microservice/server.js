@@ -7,15 +7,17 @@ var app = express();
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI);
+var autoIncrement = require('mongoose-auto-increment');
+var connection = mongoose.createConnection(process.env.MONGO_URI, { useNewUrlParser: true });
+autoIncrement.initialize(connection);
 var Schema = mongoose.Schema;
 
 var shortUrlSchema = new Schema({
-    url: {type: String, required: true},
-    shorten: {type: Number, required: true}
+    url: {type: String, required: true}
 });
 
-var ShortUrl = mongoose.model('ShortUrl', shortUrlSchema);
+shortUrlSchema.plugin(autoIncrement.plugin, { model: 'ShortUrl', field: 'short_url' });
+var ShortUrl = connection.model('ShortUrl', shortUrlSchema);
 
 var isDomain = async (req, res, next) => {
 
@@ -72,11 +74,32 @@ app.get('/', function(req, res){
 })
 
 app.post('/api/shorturl/new', isValidUrl, function(req, res){
-
-    //console.log(isDomain(domain));
+    
+    var url = req.body.url;
 
     if(req.isValid){
-        res.send({"url": req.body.url, "shorturl": 1});
+
+        ShortUrl.findOne({url: url}).then(urlR => {
+            if(!urlR){
+                console.log("not found");
+                
+                const short_url = new ShortUrl({
+                    url: url
+                });
+
+                short_url.save(function(err){
+                    if (err) return handleError(err);
+
+
+                });
+            }else {
+                console.log(urlR.short_url);
+            }
+        }).catch(error => {
+            next(error);
+        });
+        //console.log(result);
+        //res.send({"url": req.body.url, "shorturl": 1});
     }else {
         res.send({"error": "Invalid URL"});
     }
