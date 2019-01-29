@@ -96,7 +96,7 @@ app.post('/api/shorturl/new', isValidUrl, function(req, res){
                     });
                 });
             }else {
-                res.send({url: url,short_url: urlR.short_url});
+                res.send({url: url, short_url: urlR.short_url});
             }
         }).catch(error => {
             next(error);
@@ -107,6 +107,21 @@ app.post('/api/shorturl/new', isValidUrl, function(req, res){
     }
 
     
+})
+
+app.get('/api/shorturl/:i', function(req, res){
+    
+    var short_url = req.params.i;
+
+    ShortUrl.findOne({short_url: short_url}).then(json => {
+
+        if(json){
+            res.send(json);
+        }else {
+            res.send('Short_Url does not exist');
+        }
+        
+    })
 })
 
 
