@@ -73,6 +73,7 @@ app.get('/', function(req, res){
     res.sendFile(__dirname+"/views/index.html");
 })
 
+/*  */
 app.post('/api/shorturl/new', isValidUrl, function(req, res){
     
     var url = req.body.url;
@@ -82,7 +83,7 @@ app.post('/api/shorturl/new', isValidUrl, function(req, res){
         ShortUrl.findOne({url: url}).then(urlR => {
             if(!urlR){
                 console.log("not found");
-                
+
                 const short_url = new ShortUrl({
                     url: url
                 });
@@ -90,16 +91,17 @@ app.post('/api/shorturl/new', isValidUrl, function(req, res){
                 short_url.save(function(err){
                     if (err) return handleError(err);
 
-
+                    short_url.nextCount(function(err, count){
+                        res.send({url: url, short_url: count-1});
+                    });
                 });
             }else {
-                console.log(urlR.short_url);
+                res.send({url: url,short_url: urlR.short_url});
             }
         }).catch(error => {
             next(error);
         });
-        //console.log(result);
-        //res.send({"url": req.body.url, "shorturl": 1});
+        
     }else {
         res.send({"error": "Invalid URL"});
     }
