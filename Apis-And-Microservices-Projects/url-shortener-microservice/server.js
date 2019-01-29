@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
 var autoIncrement = require('mongoose-auto-increment');
+
+//set up mongodb
 var connection = mongoose.createConnection(process.env.MONGO_URI, { useNewUrlParser: true });
 autoIncrement.initialize(connection);
 var Schema = mongoose.Schema;
@@ -19,6 +21,9 @@ var shortUrlSchema = new Schema({
 shortUrlSchema.plugin(autoIncrement.plugin, { model: 'ShortUrl', field: 'short_url' });
 var ShortUrl = connection.model('ShortUrl', shortUrlSchema);
 
+/*
+
+*/
 var isDomain = async (req, res, next) => {
 
     var url_to_shorten = req.body.url;
@@ -43,6 +48,10 @@ var isDomain = async (req, res, next) => {
     next();
 }
 
+/*
+   isValidUrl(): Middleware to check if url on post request follows the specified pattern
+                 http(s)://www.[domain].[tld]/[]
+*/
 var isValidUrl = (req, res, next) => {
 
   var pattern = new RegExp('^(https?:\\/\\/)'+ // protocol
@@ -73,7 +82,9 @@ app.get('/', function(req, res){
     res.sendFile(__dirname+"/views/index.html");
 })
 
-/*  */
+/* 
+
+*/
 app.post('/api/shorturl/new', isValidUrl, function(req, res){
     
     var url = req.body.url;
@@ -92,23 +103,26 @@ app.post('/api/shorturl/new', isValidUrl, function(req, res){
                     if (err) return handleError(err);
 
                     short_url.nextCount(function(err, count){
-                        res.send({url: url, short_url: count-1});
+                        res.send({original_url: url, short_url: count-1});
                     });
                 });
             }else {
-                res.send({url: url, short_url: urlR.short_url});
+                res.send({original_url: url, short_url: urlR.short_url});
             }
         }).catch(error => {
             next(error);
         });
         
     }else {
-        res.send({"error": "Invalid URL"});
+        res.send({"error": "invalid URL"});
     }
 
     
 })
 
+/*
+
+*/
 app.get('/api/shorturl/:i', function(req, res){
     
     var short_url = req.params.i;
@@ -116,9 +130,9 @@ app.get('/api/shorturl/:i', function(req, res){
     ShortUrl.findOne({short_url: short_url}).then(json => {
 
         if(json){
-            res.send(json);
+            res.redirect(json.url);
         }else {
-            res.send('Short_Url does not exist');
+            res.send({"error": "No short url found for given input"});
         }
         
     })
