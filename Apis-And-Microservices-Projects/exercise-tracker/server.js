@@ -24,51 +24,55 @@ app.use('/', express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-/**
- * 
- */
+
 app.get('/', function(req, res){
     res.sendFile(__dirname+"/views/index.html");
 })
 
-app.post('/api/exercise/new-user', function(req, res){
+app.post('/api/exercise/new-user', function (req, res) {
 
     var username = req.body.username;
-    console.log(username);
-   
-    //check if username exists
-    ExerciseUser.findOne({username: username}).then(user => {
+    
+    //if username field was filled
+    if (username) {
 
-        if(!user){
-            
-            var newUserID = shortid.generate();
+        //check if username exists
+        ExerciseUser.findOne({ username: username }).then(user => {
 
-            //create user record
-            var newUser = new ExerciseUser({
-                username: username,
-                _id: newUserID
-            });
+            if (!user) {
 
-            //insert new user into db
-            newUser.save(function(err){
-                if (err) return handleError(err);
+                var newUserID = shortid.generate();
 
-                res.send({username: username, _id: newUserID});
-            });
+                //create user record
+                var newUser = new ExerciseUser({
+                    username: username,
+                    _id: newUserID
+                });
 
-        }else {
-            res.send('username already taken');
-        }
+                //insert new user into db
+                newUser.save(function (err) {
+                    if (err) return handleError(err);
 
-    }).catch(error => {
-        next(error);
-    });
+                    res.send({ username: username, _id: newUserID });
+                });
+
+            } else {
+                res.send('username already taken');
+            }
+
+        }).catch(error => {
+            next(error);
+        });
+    } 
+    else {
+        res.send('Path `username` is required.');
+    }
 
 })
 
 
 // Not found middleware
-/*app.use((req, res, next) => {
+app.use((req, res, next) => {
     return next({ status: 404, message: 'not found' })
 })
 
@@ -89,7 +93,7 @@ app.use((err, req, res, next) => {
     }
     res.status(errCode).type('txt')
         .send(errMessage)
-})*/
+})
 
 var listener = app.listen(process.env.PORT, function() {
     console.log('App is listening on port '+listener.address().port+'..');
