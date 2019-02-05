@@ -136,6 +136,50 @@ app.post('/api/exercise/add', function(req, res){
 
 })
 
+app.get('/api/exercise/log', function(req, res){
+
+    var uid = req.query.userId;
+    var from = req.query.from;
+    var to = req.query.to;
+    var limit = parseInt(req.query.limit);
+
+    ExerciseUser.findOne({_id: uid}).then(user => {
+
+        if(user){
+
+            var result = Exercise.where('username', user.username);
+
+            if(from && from.match(/^\d{4}-\d{2}-\d{2}$/)){
+                result = result.where('date').gte(new Date(from));
+            }
+
+            if(to && to.match(/^\d{4}-\d{2}-\d{2}$/)){
+                result = result.where('date').lte(new Date(to));
+            }
+
+            if(limit){
+                result = result.limit(limit);
+            }
+            
+            result.exec(function(err, data){
+                console.log(data[0].description);
+                var arr = data.map(function(d){
+                    return {description: d.description, duration: d.duration, date: dateformat(d.date, 'ddd mmm d yyyy')}
+                });
+
+                res.send({_id: uid, username: user.username, count: data.length, 
+                log: arr});
+            });
+
+        }else {
+            res.send('unknown userId')
+        }
+    });
+
+    
+
+})
+
 
 // Not found middleware
 app.use((req, res, next) => {
