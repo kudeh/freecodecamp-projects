@@ -4,19 +4,23 @@ var cors = require('cors');
 var express = require('express');
 var app = express();
 
+var shortid = require('shortid');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
-    username: String
+    username: String,
+    _id: String
 });
 
 //set up DB connection
 var connection = mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true});
+var ExerciseUser = mongoose.model('ExerciseUser', userSchema);
 
 var bodyParser = require('body-parser');
 
-app.use(cors);
+app.use(cors({optionsSuccessStatus: 200}));
+app.use('/', express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
@@ -24,22 +28,47 @@ app.use(bodyParser.json());
  * 
  */
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/views/index.html')
+    res.sendFile(__dirname+"/views/index.html");
 })
 
 app.post('/api/exercise/new-user', function(req, res){
+
+    var username = req.body.username;
+    console.log(username);
    
     //check if username exists
+    ExerciseUser.findOne({username: username}).then(user => {
 
+        if(!user){
+            
+            var newUserID = shortid.generate();
 
+            //create user record
+            var newUser = new ExerciseUser({
+                username: username,
+                _id: newUserID
+            });
 
-    //save username & id to database
+            //insert new user into db
+            newUser.save(function(err){
+                if (err) return handleError(err);
+
+                res.send({username: username, _id: newUserID});
+            });
+
+        }else {
+            res.send('username already taken');
+        }
+
+    }).catch(error => {
+        next(error);
+    });
 
 })
 
 
 // Not found middleware
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
     return next({ status: 404, message: 'not found' })
 })
 
@@ -60,8 +89,8 @@ app.use((err, req, res, next) => {
     }
     res.status(errCode).type('txt')
         .send(errMessage)
-})
+})*/
 
 var listener = app.listen(process.env.PORT, function() {
-    console.log('App is listening on port ' + listener.address().port + '...');
-})
+    console.log('App is listening on port '+listener.address().port+'..');
+});
