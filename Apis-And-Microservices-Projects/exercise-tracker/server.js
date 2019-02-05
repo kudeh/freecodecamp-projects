@@ -13,9 +13,17 @@ var userSchema = new Schema({
     _id: String
 });
 
+var ExerciseSchema = new Schema({
+    _id: String,
+    description: String,
+    duration: Number,
+    date: Date
+});
+
 //set up DB connection
 var connection = mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true});
 var ExerciseUser = mongoose.model('ExerciseUser', userSchema);
+var Exercise = mongoose.model('Exercise', ExerciseSchema);
 
 var bodyParser = require('body-parser');
 
@@ -67,6 +75,45 @@ app.post('/api/exercise/new-user', function (req, res) {
     else {
         res.send('Path `username` is required.');
     }
+
+})
+
+app.post('/api/exercise/add', function(req, res){
+
+    uid = req.body.userId;
+    desc = req.body.description;
+    duration = req.body.duration;
+    date = req.body.date;
+
+    //{"username":"ktest","_id":"BJkp5cLVE"}
+    ExerciseUser.findOne({_id: uid}).then(user => {
+
+        if(user){
+
+            //check to see duration is a number
+            duration = parseInt(duration);
+
+            if(duration){
+
+                //check date format
+                if(date.match(/^\d{4}-\d{2}-\d{2}$/)){
+
+
+
+                }else {
+                    res.send('Cast to Date failed for value '+ date +' at path "date"')
+                }
+
+            }else{
+                res.send('Cast to Number failed for value ' + duration + 'at path "duration"')
+            }
+
+            
+            
+        }else {
+            res.send('unknown _id');
+        }
+    })
 
 })
 
