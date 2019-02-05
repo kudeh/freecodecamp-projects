@@ -14,7 +14,7 @@ var userSchema = new Schema({
 });
 
 var ExerciseSchema = new Schema({
-    _id: String,
+    username: String,
     description: String,
     duration: Number,
     date: Date
@@ -26,6 +26,7 @@ var ExerciseUser = mongoose.model('ExerciseUser', userSchema);
 var Exercise = mongoose.model('Exercise', ExerciseSchema);
 
 var bodyParser = require('body-parser');
+var dateformat = require('dateformat');
 
 app.use(cors({optionsSuccessStatus: 200}));
 app.use('/', express.static('public'));
@@ -86,7 +87,7 @@ app.post('/api/exercise/add', function(req, res){
     date = req.body.date;
 
     //{"username":"ktest","_id":"BJkp5cLVE"}
-    ExerciseUser.findOne({_id: uid}).then(user => {
+    ExerciseUser.findOne({_id: uid}, 'username').then(user => {
 
         if(user){
 
@@ -98,14 +99,29 @@ app.post('/api/exercise/add', function(req, res){
                 //check date format
                 if(date.match(/^\d{4}-\d{2}-\d{2}$/)){
 
+                    date = new Date(date);
 
+                    var newExercise = new Exercise({
+                        username: user.username,
+                        description: desc,
+                        duration: duration,
+                        date: date
+                    });
+
+                    newExercise.save(function(err){
+
+                        if (err) console.log(err);
+
+                        res.send({username: user.username, description: desc,
+                        duration: duration, _id: uid, date: dateformat(date, 'ddd mmm d yyyy')});
+                    });
 
                 }else {
-                    res.send('Cast to Date failed for value '+ date +' at path "date"')
+                    res.send('Cast to Date failed for value "'+ req.body.date +'" at path "date"')
                 }
 
             }else{
-                res.send('Cast to Number failed for value ' + duration + 'at path "duration"')
+                res.send('Cast to Number failed for value "' + req.body.duration + '" at path "duration"')
             }
 
             
@@ -113,7 +129,10 @@ app.post('/api/exercise/add', function(req, res){
         }else {
             res.send('unknown _id');
         }
-    })
+    }).catch(error => {
+        console.log('error');
+        next(error);
+    });
 
 })
 
