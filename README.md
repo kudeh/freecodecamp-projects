@@ -27,7 +27,7 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    1. Timestamp Microservice - [View On Glitch](https://cuddly-aardvark.glitch.me/).
    2. Request Header Parser Microservice - [View On Glitch](https://gainful-watcher.glitch.me/).
    3. URL Shortner Microservice - [View On Glitch](https://ancient-printer.glitch.me/).
-   4. Exercise Tracker - [View]().
+   4. Exercise Tracker - [View On Glitch](https://uncovered-parakeet.glitch.me/).
    5. File Metadata Microservice - [View]().
 
 ### Information Security And Quality Assurance Projects
