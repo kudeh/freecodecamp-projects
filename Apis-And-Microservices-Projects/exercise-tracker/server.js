@@ -60,7 +60,7 @@ app.post('/api/exercise/new-user', function (req, res) {
 
                 //insert new user into db
                 newUser.save(function (err) {
-                    if (err) return handleError(err);
+                    if (err) return console.log(err);
 
                     res.send({ username: username, _id: newUserID });
                 });
@@ -70,7 +70,7 @@ app.post('/api/exercise/new-user', function (req, res) {
             }
 
         }).catch(error => {
-            next(error);
+            console.log(error);
         });
     } 
     else {
@@ -81,10 +81,10 @@ app.post('/api/exercise/new-user', function (req, res) {
 
 app.post('/api/exercise/add', function(req, res){
 
-    uid = req.body.userId;
-    desc = req.body.description;
-    duration = req.body.duration;
-    date = req.body.date;
+    var uid = req.body.userId;
+    var desc = req.body.description;
+    var duration = req.body.duration;
+    var date = req.body.date;
 
     //{"username":"ktest","_id":"BJkp5cLVE"}
     ExerciseUser.findOne({_id: uid}, 'username').then(user => {
@@ -99,7 +99,7 @@ app.post('/api/exercise/add', function(req, res){
                 //check date format
                 if(date.match(/^\d{4}-\d{2}-\d{2}$/)){
 
-                    date = new Date(date);
+                    date = new Date(date + ' EDT');
 
                     var newExercise = new Exercise({
                         username: user.username,
@@ -113,7 +113,7 @@ app.post('/api/exercise/add', function(req, res){
                         if (err) console.log(err);
 
                         res.send({username: user.username, description: desc,
-                        duration: duration, _id: uid, date: dateformat(date, 'ddd mmm d yyyy')});
+                        duration: duration, _id: uid, date: dateformat(date, 'ddd mmm dd yyyy')});
                     });
 
                 }else {
@@ -130,8 +130,7 @@ app.post('/api/exercise/add', function(req, res){
             res.send('unknown _id');
         }
     }).catch(error => {
-        console.log('error');
-        next(error);
+        console.log(error);
     });
 
 })
@@ -162,9 +161,9 @@ app.get('/api/exercise/log', function(req, res){
             }
             
             result.exec(function(err, data){
-                console.log(data[0].description);
+
                 var arr = data.map(function(d){
-                    return {description: d.description, duration: d.duration, date: dateformat(d.date, 'ddd mmm d yyyy')}
+                    return {description: d.description, duration: d.duration, date: dateformat(d.date, 'ddd mmm dd yyyy')}
                 });
 
                 res.send({_id: uid, username: user.username, count: data.length, 
