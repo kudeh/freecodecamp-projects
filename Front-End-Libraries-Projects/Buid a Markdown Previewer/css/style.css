@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .box {
+    width: 45%;
+    border: 1px solid blue;
+    height: 100vh;
+  }
+  
+  .box h3 {
+    border: 1px solid blue;
+  }
+  
+  textarea {
+    width: 95%;
+    resize: none;
+  }
+  
+  box #result {
+    overflow-y: scroll;
+  }
