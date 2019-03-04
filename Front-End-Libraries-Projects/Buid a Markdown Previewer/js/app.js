@@ -1,9 +1,11 @@
+import Editor from 'components/Editor.js';
+
 const domContainer = document.getElementById('root');
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {text: ''};
+    this.state = {markdown: ''};
   }
   
   handleChange = (e) => {
@@ -15,19 +17,7 @@ class App extends React.Component {
     return (
       <div className="container">
         
-        <div className="box">
-        <h3>Editor</h3>
-        <textarea  placeholder='enter text' onChange={this.handleChange}>
-        
-        </textarea>
-        </div>
-        
-        <div className="box">
-        <h3>Result</h3>
-        <div id="result">
-
-        </div>
-        </div>
+        <Editor markdown={this.state.markdown} onChange={this.handleChange} />
 
       </div>
     );
