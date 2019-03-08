@@ -14,13 +14,13 @@ app.get('/', function(req, res){
     res.sendFile(__dirname+'/views/index.html')
 })
 
-app.get('/timestamp', function(req, res){
+app.get('/api/timestamp', function(req, res){
 
     var now = new Date();
     res.send({"unix": now.getTime(), "utc": now.toUTCString()})
 })
 
-app.get('/timestamp/:date_string', function(req, res){
+app.get('/api/timestamp/:date_string', function(req, res){
 
     var input_date = req.params.date_string;
     var input_date_int = parseInt(input_date);
