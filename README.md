@@ -14,6 +14,7 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
 ### Front End Libraries Projects
    1. Build a Random Quote Machine - [View On CodePen](https://codepen.io/kudeh/full/KGKVJo/).
    2. Build a Markdown Previewer - [View On CodePen](https://codepen.io/kudeh/full/rRxQrm).
+   3. Build a Drum Machine - [View On CodePen](https://codepen.io/kudeh/full/rRzxGZ).
 
 
 ### Data Visualization Projects
