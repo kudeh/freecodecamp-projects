@@ -38,6 +38,9 @@ class Calculator extends React.Component {
     
     return (
       <div className="container">
+        <div className="logo">
+            <i className="fab fa-free-code-camp"></i>
+        </div>
         <Display text={this.state.displayText} />
         <div className="grid">
           <KeyPad onClick={this.handleClick} />

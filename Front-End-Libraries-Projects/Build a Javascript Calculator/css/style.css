@@ -5,19 +5,45 @@ body {
 }
 
 #root {
-	width: 60%;
+    width: 100vh;
+    height: 100vh;
+    position: relative;
+    background-color: silver;
 }
 
 .container {
 	display: grid;
-	grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-row-gap: 4px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    padding: 30px 7px 10px 7px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-image: linear-gradient(to right top,  silver 25%, white 85%);
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+}
+
+.logo {
+  color: black;
+  font-size: 1.75em;
 }
 
 #display {
 	text-align: right;
 	padding: 5px;
-	padding-right: 1px;
-	border: 1px solid black;
+	padding-right: 7px;
+    border: 1px solid black;
+    background-image: linear-gradient(to right, silver 5%, white);
+    font-size: 1.25em;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
 }
 
 .grid {
@@ -28,7 +54,8 @@ body {
 
 .grid #clear {
 	grid-column-start: 1;
-	grid-column-end: 3;
+    grid-column-end: 3;
+    background-color: #ED4545;
 }
 
 .grid #zero {
@@ -45,5 +72,23 @@ body {
 .button {
 	text-align: center;
 	padding: 10px;
-	border: 1px solid black;
+    border: 1px solid black;
+    margin: 3px;
+    background-color:#545e78;
+    color: white;
+    font-weight: bold;
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+}
+
+.button:active {
+    transform: scale(.95);
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+}
+
+.button:hover {
+    cursor: pointer;
 }
