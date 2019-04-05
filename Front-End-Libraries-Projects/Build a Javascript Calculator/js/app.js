@@ -86,7 +86,7 @@ class Calculator extends React.Component {
         newLastInput = input;
     }else {
 
-        if(lastInput[lastInput.length-1] === '.' && input === '.'){
+        if(lastInput.includes('.') && input === '.'){
 
             newDisplay = displayText;
             newLastInput = lastInput;
