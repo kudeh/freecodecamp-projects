@@ -67,9 +67,8 @@ class Calculator extends React.Component {
             newDisplay = '';
             newLastInput = '0';
             
-        }finally {
-    
         }
+
     }else if(input === 'AC') {
         newDisplay = '';
         newLastInput = '0';
@@ -86,9 +85,21 @@ class Calculator extends React.Component {
             
         newLastInput = input;
     }else {
-        newDisplay += (displayText + input);
-        let newDisplaySplit = newDisplay.split(' ');
-        newLastInput = newDisplaySplit[newDisplaySplit.length-1];
+
+        if(lastInput[lastInput.length-1] === '.' && input === '.'){
+
+            newDisplay = displayText;
+            newLastInput = lastInput;
+            
+        }else {
+
+            newDisplay += (displayText + input);
+            let newDisplaySplit = newDisplay.split(' ');
+            newLastInput = newDisplaySplit[newDisplaySplit.length-1];
+        }
+
+
+        
     }
 
     this.setState({displayText: newDisplay, lastInput: newLastInput});
