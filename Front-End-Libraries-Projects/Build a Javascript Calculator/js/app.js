@@ -25,13 +25,63 @@ class Calculator extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      displayText: '0',
+      displayText: '',
+      lastInput: '0'
     }
 
   }
+
+  isType = (char) => {
+      if(char in ['/', '*', '-', '+']){
+          return 'operator';
+      }else if (char == '.'){
+          return '.';
+      }else if (char == 'AC'){
+          return 'clear'
+      }else{
+          return 'operand'
+      }
+  }
+
   
-  handleClick = (id, e) => {
-    this.setState({displayText: id});
+  
+  handleClick = (input, e) => {
+    
+    const displayText = this.state.displayText;
+    const lastInput = this.state.lastInput; 
+    const lastInputType = this.isType(lastInput);
+    const thisInputType = this.isType(input);
+    let newDisplay = '';
+    let newLastInput = '';
+    
+    /*if(displayText === '' && lastInputType === 'operand'){
+        newDisplay = input;
+    }else if(input === 'AC'){
+        newDisplay = '';
+    }else if(lastInputType === 'operator' && thisInputType === 'operator'){
+        newDisplay = displayText.slice(0, displayText.length-1) + input;
+    }else if(lastInputType !== thisInputType){
+        newDisplay += ' ' + input;
+    }else {
+        newDisplay += input;
+    }*/
+
+    try {
+
+        let result = math.eval(displayText + input);
+        
+    } catch (error) {
+
+        newDisplay = displayText;
+        newLastInput = lastInput;
+        
+    }finally {
+
+    }
+
+
+    //this.setState({displayText: newDisplay, lastInput: newDisplay.charAt(newDisplay.length-1)});
+    this.setState({displayText: newDisplay, lastInput: newLastInput});
   }
   
   render() {
@@ -41,7 +91,7 @@ class Calculator extends React.Component {
         <div className="logo">
             <i className="fab fa-free-code-camp"></i>
         </div>
-        <Display text={this.state.displayText} />
+        <Display text={this.state.displayText} lastInput={this.state.lastInput} />
         <div className="grid">
           <KeyPad onClick={this.handleClick} />
         </div>
@@ -55,7 +105,8 @@ class Calculator extends React.Component {
 const Display = (props) => {
   return (
     <div id="display">
-      {props.text}
+        <div className="expression">{props.text}</div>
+        <div classname="last-input">{props.lastInput}</div>
     </div>
   )
 }
