@@ -70,10 +70,17 @@ class Calculator extends React.Component {
         }
 
     }else if(input === 'AC') {
+
         newDisplay = '';
         newLastInput = '0';
+
     }else if(lastInputType === 'operator' && thisInputType === 'operator'){
+
         newDisplay = displayText.slice(0, displayText.length-1) + input;
+        newLastInput = input;
+
+    }else if (lastInput === 'Infinity'){
+        newDisplay = input;
         newLastInput = input;
     }else if(lastInputType !== thisInputType){
 
@@ -84,6 +91,7 @@ class Calculator extends React.Component {
         }
             
         newLastInput = input;
+
     }else {
 
         if(lastInput.includes('.') && input === '.'){
@@ -97,12 +105,11 @@ class Calculator extends React.Component {
             let newDisplaySplit = newDisplay.split(' ');
             newLastInput = newDisplaySplit[newDisplaySplit.length-1];
         }
-
-
         
     }
 
     this.setState({displayText: newDisplay, lastInput: newLastInput});
+
   }
   
   render() {

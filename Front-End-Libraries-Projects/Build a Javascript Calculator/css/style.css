@@ -1,7 +1,8 @@
 body {
 	margin: auto;
 	display: flex;
-	justify-content: center;
+    justify-content: center;
+    background-image: linear-gradient(to right top,  silver 25%, white 85%);
 }
 
 #root {
@@ -9,6 +10,7 @@ body {
     height: 100vh;
     position: relative;
     background-color: silver;
+    background-image: linear-gradient(to right top,  silver 25%, white 85%);
 }
 
 .container {
