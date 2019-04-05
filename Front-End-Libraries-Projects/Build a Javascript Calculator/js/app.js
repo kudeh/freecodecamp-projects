@@ -32,12 +32,8 @@ class Calculator extends React.Component {
   }
 
   isType = (char) => {
-      if(char in ['/', '*', '-', '+']){
+      if(['/', '*', '-', '+'].includes(char)){
           return 'operator';
-      }else if (char == '.'){
-          return '.';
-      }else if (char == 'AC'){
-          return 'clear'
       }else{
           return 'operand'
       }
@@ -47,40 +43,54 @@ class Calculator extends React.Component {
   
   handleClick = (input, e) => {
     
-    const displayText = this.state.displayText;
-    const lastInput = this.state.lastInput; 
+    let displayText = this.state.displayText;
+    let displayTextLastChar = displayText.charAt(displayText.length-1);
+    let lastInput = this.state.lastInput; 
     const lastInputType = this.isType(lastInput);
     const thisInputType = this.isType(input);
     let newDisplay = '';
     let newLastInput = '';
+
+    if(input === '='){
+        try {
+
+            if (this.isType(displayTextLastChar) === 'operator' && displayText.length > 1) {
+                displayText = displayText.slice(0, displayText.length-1);
+            }
+
+            newDisplay = math.eval(displayText)+'';
+            newLastInput = newDisplay;
+
+            
+        } catch (error) {
     
-    /*if(displayText === '' && lastInputType === 'operand'){
-        newDisplay = input;
-    }else if(input === 'AC'){
+            newDisplay = '';
+            newLastInput = '0';
+            
+        }finally {
+    
+        }
+    }else if(input === 'AC') {
         newDisplay = '';
+        newLastInput = '0';
     }else if(lastInputType === 'operator' && thisInputType === 'operator'){
         newDisplay = displayText.slice(0, displayText.length-1) + input;
+        newLastInput = input;
     }else if(lastInputType !== thisInputType){
-        newDisplay += ' ' + input;
+
+        if(displayText.length > 0){
+            newDisplay = displayText + ' ' + input;
+        }else {
+            newDisplay = input;
+        }
+            
+        newLastInput = input;
     }else {
-        newDisplay += input;
-    }*/
-
-    try {
-
-        let result = math.eval(displayText + input);
-        
-    } catch (error) {
-
-        newDisplay = displayText;
-        newLastInput = lastInput;
-        
-    }finally {
-
+        newDisplay += (displayText + input);
+        let newDisplaySplit = newDisplay.split(' ');
+        newLastInput = newDisplaySplit[newDisplaySplit.length-1];
     }
 
-
-    //this.setState({displayText: newDisplay, lastInput: newDisplay.charAt(newDisplay.length-1)});
     this.setState({displayText: newDisplay, lastInput: newLastInput});
   }
   
