@@ -94,11 +94,14 @@ class Calculator extends React.Component {
 
     }else {
 
-        if(lastInput.includes('.') && input === '.'){
+        if((lastInput.includes('.') && input === '.')){
 
             newDisplay = displayText;
             newLastInput = lastInput;
             
+        }else if(lastInput==='0' && input === '0') {
+            newDisplay = '0';
+            newLastInput = '0';
         }else {
 
             newDisplay += (displayText + input);
