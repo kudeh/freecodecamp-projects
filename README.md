@@ -16,6 +16,7 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    2. Build a Markdown Previewer - [View On CodePen](https://codepen.io/kudeh/full/rRxQrm).
    3. Build a Drum Machine - [View On CodePen](https://codepen.io/kudeh/full/rRzxGZ).
    4. Build a Javascript Calculator - [View On CodePen](https://codepen.io/kudeh/full/ZZbONd).
+   5. Build a Pomodoro Clock - [View On CodePen]
 
 
 ### Data Visualization Projects
@@ -34,3 +35,8 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    5. File Metadata Microservice - [View On Glitch](https://simple-aluminum.glitch.me/).
 
 ### Information Security And Quality Assurance Projects
+   1. Metric-Imperial Converter 
+   2. Issue Tracker 
+   3. Personal Library 
+   4. Stock Price Checker 
+   5. PassedAnonymous Message Board 
