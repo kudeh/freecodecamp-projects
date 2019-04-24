@@ -7,8 +7,10 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    3. Build A Product Landing Page - [View On CodePen](https://codepen.io/kudeh/full/mKWqQK/).
    4. Build A Technical Documentation Page - [View On CodePen](https://codepen.io/kudeh/full/gjYVLR/).
    5. Build A Personal Portfolio Webpage - [View On CodePen](https://codepen.io/kudeh/full/VWPvWX/).
+   ![Alt text](/certifications/responsive-web-design.png?raw=true "Responsive Web Design Certification")
 
 ### Javascript Algorithms and Data Structures Projects
+   ![Alt text](/certifications/javascript-algorithms-and-data-structures.png?raw=true "Javascript Algorithms and Data Structures Certification")
 
 
 ### Front End Libraries Projects
@@ -33,6 +35,7 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    3. URL Shortner Microservice - [View On Glitch](https://ancient-printer.glitch.me/).
    4. Exercise Tracker - [View On Glitch](https://uncovered-parakeet.glitch.me/).
    5. File Metadata Microservice - [View On Glitch](https://simple-aluminum.glitch.me/).
+   ![Alt text](/certifications/api-and-microservices.png?raw=true "API and Microservices Certification")
 
 ### Information Security And Quality Assurance Projects
    1. Metric-Imperial Converter 
