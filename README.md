@@ -9,7 +9,13 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    5. Build A Personal Portfolio Webpage - [View On CodePen](https://codepen.io/kudeh/full/VWPvWX/).
    ![Alt text](/certifications/responsive-web-design.png?raw=true "Responsive Web Design Certification")
 
+
 ### Javascript Algorithms and Data Structures Projects
+   1. Palindrome Checker
+   2. PassedRoman Numeral Converter
+   3. Caesars Cipher
+   4. Telephone Number Validator
+   5. PassedCash Register
    ![Alt text](/certifications/javascript-algorithms-and-data-structures.png?raw=true "Javascript Algorithms and Data Structures Certification")
 
 
