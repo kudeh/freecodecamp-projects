@@ -49,12 +49,15 @@ body {
 
 @media only screen and (max-width:560px){
 
-  .jumbotron{
+  .jumbotron h1, .jumbotron div{
     display: none;
+  }
+  
+  .jumbotron {
+    min-height: 200px;
   }
 
 } /* max-width 600 px */
-
 
 .container {
 	text-align: center;
@@ -67,13 +70,23 @@ body {
 
 #title {
    font-family: 'Aubrey', cursive;
-	 font-size: 3em;
 	 color: #553101;
 }
 
 #description {
 	color: #553101;
 	font-weight: bold;
+}
+
+#img-div {
+  display: none;
+}
+
+#image {
+  display: block;
+  max-width: 200px;
+  height: auto;
+  margin: auto;
 }
 
 #content {
