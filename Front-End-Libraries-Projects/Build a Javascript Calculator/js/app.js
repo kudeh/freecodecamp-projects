@@ -7,7 +7,7 @@ const calcData = [
   {id: 'seven', text: '7'},
   {id: 'eight', text: '8'},
   {id: 'nine', text: '9'},
-  {id: 'substract', text: '-'},
+  {id: 'subtract', text: '-'},
   {id: 'four', text: '4'},
   {id: 'five', text: '5'},
   {id: 'six', text: '6'},
@@ -26,7 +26,8 @@ class Calculator extends React.Component {
     super(props);
     this.state = {
       displayText: '',
-      lastInput: '0'
+      lastInput: '0',
+      lastClicked: ''
     }
 
   }
@@ -50,8 +51,11 @@ class Calculator extends React.Component {
     const thisInputType = this.isType(input);
     let newDisplay = '';
     let newLastInput = '';
+    let lastClicked = this.state.lastClicked;
+
 
     if(input === '='){
+
         try {
 
             if (this.isType(displayTextLastChar) === 'operator' && displayText.length > 1) {
@@ -79,6 +83,12 @@ class Calculator extends React.Component {
         newDisplay = displayText.slice(0, displayText.length-1) + input;
         newLastInput = input;
 
+    }else if (lastInput==='.' && thisInputType === 'operator'){
+      newDisplay = displayText;
+      newLastInput = lastInput;
+    }else if (displayText==='' && (input === '/' || input === '*')){
+      newDisplay = displayText;
+      newLastInput = lastInput;
     }else if (lastInput === 'Infinity'){
         newDisplay = input;
         newLastInput = input;
@@ -99,25 +109,39 @@ class Calculator extends React.Component {
             newDisplay = displayText;
             newLastInput = lastInput;
             
-        }else if(lastInput==='0' && input === '0') {
-            newDisplay = '0';
-            newLastInput = '0';
+        }else if(lastInput==='0') {
+            if(input === '0'){
+              newDisplay = '0';
+              newLastInput = '0';
+            }else if(input === '.') {
+              newDisplay = lastInput+input;
+              newLastInput = newDisplay;
+            }else{
+              newDisplay = input;
+              newLastInput = newDisplay;
+            }         
         }else {
-
-            newDisplay += (displayText + input);
-            let newDisplaySplit = newDisplay.split(' ');
-            newLastInput = newDisplaySplit[newDisplaySplit.length-1];
+            if(!(lastClicked === '=') && (lastInput.length <= 21)){
+              newDisplay += (displayText + input);
+              let newDisplaySplit = newDisplay.split(' ');
+              newLastInput = newDisplaySplit[newDisplaySplit.length-1];
+            }else {
+              newDisplay = displayText;
+              newLastInput = lastInput;
+            }
+            
         }
         
     }
 
-    this.setState({displayText: newDisplay, lastInput: newLastInput});
+    this.setState({displayText: newDisplay, lastInput: newLastInput, lastClicked: input});
 
   }
   
   render() {
     
     return (
+      <React.Fragment>
       <div className="container">
         <div className="logo">
             <i className="fab fa-free-code-camp"></i>
@@ -127,6 +151,11 @@ class Calculator extends React.Component {
           <KeyPad onClick={this.handleClick} />
         </div>
       </div>
+      <div id="footer">
+		    <h4>Designed and Coded By</h4>
+		    <h4 id="author"><a href="https://github.com/kudeh/freecodecamp-projects">Kene Udeh</a></h4>
+	    </div>
+      </React.Fragment>
     )
     
   }
@@ -135,9 +164,9 @@ class Calculator extends React.Component {
 
 const Display = (props) => {
   return (
-    <div id="display">
+    <div id="display-box">
         <div className="expression">{props.text}</div>
-        <div classname="last-input">{props.lastInput}</div>
+        <div id="display" className="last-input">{props.lastInput}</div>
     </div>
   )
 }
