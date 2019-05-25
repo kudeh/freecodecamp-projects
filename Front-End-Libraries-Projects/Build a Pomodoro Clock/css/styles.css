@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Oxygen&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-family: 'Oxygen', sans-serif;
+    background-color:#5CDB95;
+}
+
+#root {
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    background-color:#5CDB95;
+}
+
+#header {
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #EDF5E1;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 4fr 3fr;
+    grid-row-gap: 10px;
+    margin-top: 20px;
+    background-color: #05386B;
+    color: white;
+    font-weight: bold;
+}
+
+.settings-box {
+    display: flex;
+    justify-content: center;
+    font-size: 1.25em;
+}
+
+.duration-box {
+    margin: 15px;
+    text-align: center;
+}
+
+.duration-setting {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.increment, .decrement {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.length {
+    padding: 10px;
+}
+
+.session-number {
+    text-align: right;
+    padding-right: 15px;
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.countdown-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 25px;
+    margin: 15px;
+    padding: 5px;
+    text-align: center;
+}
+
+#time-left {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    font-family: digital;
+    font-size: 80px;
+}
+
+.button-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+.button {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #379683;
+    font-weight: 1.5em;
+    cursor: pointer;
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#author a {
+    text-decoration: none;
+}
+
+#author a:hover {
+    color: blue;
+}
+
+
+
+@media (max-width: 480px) {
+
+    #root {
+        align-items: stretch;
+        padding: 0;
+    }
+
+    #app {
+        padding: 30px;
+    }
+
+}

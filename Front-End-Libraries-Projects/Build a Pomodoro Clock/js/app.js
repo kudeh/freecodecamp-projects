@@ -19,20 +19,20 @@ class Pomodoro extends React.Component {
         return (
 
              <React.Fragment>
-                 <div className="session-number">
-                    <h2>Session #{this.state.session_num}</h2>
-                 </div>
                  <div className="settings-box">
                      <DurationSetter type="session" 
-                                     text="Session Label"
+                                     text="Session Length"
                                      length={this.state.session_length}
                                      ids={['session-label', 'session-decrement', 'session-increment', 'session-length']}
                      />
                      <DurationSetter type="break"
-                                     text="Break Label"
+                                     text="Break Length"
                                      length={this.state.break_length}
                                      ids={['break-label', 'break-decrement', 'break-increment', 'break-length']}
                      />
+                 </div>
+                 <div className="session-number">
+                    <h4>Pomodoro #{this.state.session_num}</h4>
                  </div>
                  <div className="countdown-box">
                     <CountDownTimer in_session={this.state.in_session} />
@@ -79,10 +79,11 @@ const CountDownTimer = (props) => {
             </div>
             <div id="time-left" className="countdown">
                 <div className="minute">
-
+                    25
                 </div>
+                <div className="divider">:</div>
                 <div className="seconds">
-
+                    00
                 </div>
             </div>
         </div>
