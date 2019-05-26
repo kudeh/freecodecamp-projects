@@ -42,6 +42,11 @@ body {
     background-color: #05386B;
     color: white;
     font-weight: bold;
+    -webkit-box-shadow: -1px 1px 9px -1px rgba(5,56,107,1);
+    -moz-box-shadow: -1px 1px 9px -1px rgba(5,56,107,1);
+    box-shadow: -1px 1px 9px -1px rgba(5,56,107,1);
+    border-radius: 10px;
+    padding-top: 15px;
 }
 
 .settings-box {
@@ -110,6 +115,14 @@ body {
     background-color: #379683;
     font-weight: 1.5em;
     cursor: pointer;
+    -webkit-box-shadow: -1px 1px 9px -1px rgba(55,150,131,1);
+    -moz-box-shadow: -1px 1px 9px -1px rgba(55,150,131,1);
+    box-shadow: -1px 1px 9px -1px rgba(55,150,131,1);
+}
+
+.button:active {
+    transform: scale(0.95);
+    transition: .52;
 }
 
 #footer {
