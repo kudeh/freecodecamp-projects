@@ -4,7 +4,8 @@ class Pomodoro extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = this.getDefaults()
+        this.state = this.getDefaults();
+        this.audio = React.createRef()
     }
 
 
@@ -103,7 +104,7 @@ class Pomodoro extends React.Component {
                 if (timer === 0) {
 
                     //play Audio
-                    console.log(timer)
+                    this.audio.current.play();
 
                     length = !in_session ? prevState.session_length
                                          : prevState.break_length;
@@ -130,11 +131,12 @@ class Pomodoro extends React.Component {
 
 
     handleReset = (e) => {
-        this.setState(this.getDefaults())
+        this.setState(this.getDefaults());
         if (this.interval) {
             this.interval = clearInterval(this.interval);
             return null;
         }
+        this.audio.current.load();
     }
 
 
@@ -175,6 +177,7 @@ class Pomodoro extends React.Component {
                                         onClick={this.handleStartStop}
                      />
                  </div>
+                 <audio ref={this.audio} id="beep" src={"https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/success.mp3"}/>
              </React.Fragment>
 
         );
