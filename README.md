@@ -12,10 +12,10 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
 
 ### Javascript Algorithms and Data Structures Projects
    1. Palindrome Checker
-   2. PassedRoman Numeral Converter
+   2. Roman Numeral Converter
    3. Caesars Cipher
    4. Telephone Number Validator
-   5. PassedCash Register
+   5. Cash Register
    ![Alt text](/certifications/javascript-algorithms-and-data-structures.png?raw=true "Javascript Algorithms and Data Structures Certification")
 
 
@@ -24,7 +24,7 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    2. Build a Markdown Previewer - [View On CodePen](https://codepen.io/kudeh/full/rRxQrm).
    3. Build a Drum Machine - [View On CodePen](https://codepen.io/kudeh/full/rRzxGZ).
    4. Build a Javascript Calculator - [View On CodePen](https://codepen.io/kudeh/full/ZZbONd).
-   5. Build a Pomodoro Clock - View On CodePen
+   5. Build a Pomodoro Clock - [View On CodePen](https://codepen.io/kudeh/full/YbLeBe).
 
 
 ### Data Visualization Projects
