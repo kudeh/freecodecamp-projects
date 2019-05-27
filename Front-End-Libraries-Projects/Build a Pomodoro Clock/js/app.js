@@ -19,6 +19,9 @@ class Pomodoro extends React.Component {
         paused: false
     })
 
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
 
     handleIncrement = (type, e) => {
 
@@ -177,7 +180,8 @@ class Pomodoro extends React.Component {
                                         onClick={this.handleStartStop}
                      />
                  </div>
-                 <audio ref={this.audio} id="beep" src={"https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/success.mp3"}/>
+                 <audio ref={this.audio} id="beep" volume={1.0}
+                                         src={"https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/success.mp3"}/>
              </React.Fragment>
 
         );
@@ -213,8 +217,8 @@ const DurationSetter = (props) => {
 
 const CountDownTimer = (props) => {
 
-    let minutes = Math.floor(props.timer/60).toString().padStart(2, '0')
-    let seconds = Math.floor(((props.timer/60)%1)*60).toString().padStart(2, '0')
+    let minutes = Math.floor(props.timer/60).toString().padStart(2, '0');
+    let seconds = (props.timer%60).toString().padStart(2, '0');
     
     return (
         <div className="timer-box">
