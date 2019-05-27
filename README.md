@@ -25,7 +25,7 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    3. Build a Drum Machine - [View On CodePen](https://codepen.io/kudeh/full/rRzxGZ).
    4. Build a Javascript Calculator - [View On CodePen](https://codepen.io/kudeh/full/ZZbONd).
    5. Build a Pomodoro Clock - [View On CodePen](https://codepen.io/kudeh/full/YbLeBe).
-
+   ![Alt text](/certifications/front-end-libraries.png?raw=true "Front End Libraries Certification")
 
 ### Data Visualization Projects
    1. Visualize Data with a Bar Chart - View On CodePen.
