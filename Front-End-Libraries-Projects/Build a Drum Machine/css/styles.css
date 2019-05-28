@@ -1,208 +1,213 @@
 body {
-    margin: 0px;
-    background-color: #3a3838;
-  }
+  margin: 0px;
+  background-color: #3a3838;
+}
+
+#root {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.container {
+  border: 10px solid black;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #c2ffd7;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.logo {
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.keyboard {
+  min-width: 290px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.drum-pad {
   
-  #root {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-items: center;
-  }
-  
-  .container {
-    border: 10px solid black;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #c2ffd7;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-  }
-  
-  .logo {
-    align-self: flex-end;
-    font-weight: bold;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 5px;
+  background-color: #f7f2f2;
+  -webkit-box-shadow: 0px -1px 11px 2px rgba(10,9,9,1);
+  -moz-box-shadow: 0px -1px 11px 2px rgba(10,9,9,1);
+  box-shadow: 0px -1px 11px 2px rgba(10,9,9,1);
+  cursor: pointer;
+}
+
+.drum-pad:active {
+  transform: scale(0.9);
+  transition: .3s;
+}
+
+.key:hover {
+  -webkit-box-shadow: -2px 2px 19px 2px rgba(214,26,26,1);
+  -moz-box-shadow: -2px 2px 19px 2px rgba(214,26,26,1);
+  box-shadow: -2px 2px 19px 2px rgba(214,26,26,1);
+  background-color: #ffe8e8;
+  border: none;
+  cursor: pointer;
+}
+
+.pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+  padding: 10px;
+  border: 3px solid b;
+  border-radius: 10px;
+  border: 2px solid black;
+  -webkit-box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
+  -moz-box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
+  box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
+}
+
+.power {
+  margin: 5px;
+  font-size: 2em;
+  color: green;
+  font-weight: bold;
+}
+
+.power:hover {
+  cursor: pointer;
+}
+
+.red {
+  color: red;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  width: 95%;
+  margin: 2px;
+  border: 1px solid black;
+  font-weight: bold;
+  background-color: silver;
+}
+
+.volumecontainer {
+  width: 100%;
+}
+
+.volume {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  margin-top: 15px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border: 1px solid black;
+  -webkit-box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
+  -moz-box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
+  box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
+}
+
+.volume:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 20px;
+  background: black;
+  cursor: pointer;
+}
+
+.volume::-moz-range-thumb {
+  width: 10px;
+  height: 20px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.bankContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  font-weight: bold;
+}
+
+.bank {
+  height: 15px;
+  min-width: 35px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5px;
+}
+
+.bank:hover {
+  cursor: pointer;
+}
+
+.toggle {
+  width: 50%;
+  height: 100%;
+  background-color: black;
+  margin: 1px;
+}
+
+.left {
+  align-self: flex-start;
+}
+
+.right {
+  align-self: flex-end;
+}
+
+@media only screen and (max-width: 600px) {
   .board {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   
   .keyboard {
-    min-width: 290px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  
-  .key {
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    border: 1px solid black;
-    border-radius: 10px;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 5px;
-    background-color: #f7f2f2;
-    -webkit-box-shadow: 0px -1px 11px 2px rgba(10,9,9,1);
-  -moz-box-shadow: 0px -1px 11px 2px rgba(10,9,9,1);
-  box-shadow: 0px -1px 11px 2px rgba(10,9,9,1);
-  }
-  
-  .key:hover {
-    -webkit-box-shadow: -2px 2px 19px 2px rgba(214,26,26,1);
-    -moz-box-shadow: -2px 2px 19px 2px rgba(214,26,26,1);
-    box-shadow: -2px 2px 19px 2px rgba(214,26,26,1);
-    background-color: #ffe8e8;
-    border: none;
-    cursor: pointer;
+    max-width: 250px;
   }
   
   .pane {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin: 10px;
-    padding: 10px;
-    border: 3px solid b;
-    border-radius: 10px;
-    border: 2px solid black;
-    -webkit-box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
-    -moz-box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
-    box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
-  }
-  
-  .power {
-    margin: 5px;
-    font-size: 2em;
-    color: green;
-    font-weight: bold;
-  }
-  
-  .power:hover {
-    cursor: pointer;
-  }
-  
-  .red {
-    color: red;
+    min-height: 200px;
   }
   
   .display {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20%;
-    width: 95%;
-    margin: 2px;
-    border: 1px solid black;
-    font-weight: bold;
-    background-color: silver;
+    min-height: 20px;
   }
   
-  .volumecontainer {
-    width: 100%;
-  }
-  
-  .volume {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 4px;
-    margin-top: 15px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-    border: 1px solid black;
-    -webkit-box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
-    -moz-box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
-    box-shadow: 0px -1px 4px 1px rgba(3,3,3,1);
-  }
-  
-  .volume:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-  
-  .volume::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 10px;
-    height: 20px;
-    background: black;
-    cursor: pointer;
-  }
-  
-  .volume::-moz-range-thumb {
-    width: 10px;
-    height: 20px;
-    background: #4CAF50;
-    cursor: pointer;
-  }
-  
-  .bankContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    font-weight: bold;
-  }
-  
-  .bank {
-    height: 15px;
-    min-width: 35px;
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 5px;
-  }
-  
-  .bank:hover {
-    cursor: pointer;
-  }
-  
-  .toggle {
-    width: 50%;
-    height: 100%;
-    background-color: black;
-    margin: 1px;
-  }
-  
-  .left {
-    align-self: flex-start;
-  }
-  
-  .right {
-    align-self: flex-end;
-  }
-  
-  @media only screen and (max-width: 600px) {
-    .board {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-    
-    .keyboard {
-      max-width: 250px;
-    }
-    
-    .pane {
-      min-height: 200px;
-    }
-    
-    .display {
-      min-height: 20px;
-    }
-    
-  }
+}

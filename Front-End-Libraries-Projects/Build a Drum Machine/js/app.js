@@ -85,11 +85,11 @@ class App extends React.Component {
       let url = keyMap[this.state.key].urls[this.state.bank];
       let name = keyMap[this.state.key].names[this.state.bank];
       
-      console.log(url, name);
+      console.log(url, name, keyName);
       this.setState({text: name, url: url}, () => {
-        var audio = document.getElementById("audio");
-    audio.play();
-      });
+        let audio = document.getElementById(keyName);
+        audio.play();
+      });   
 
     });
        
@@ -107,7 +107,7 @@ class App extends React.Component {
     
     return (
       
-      <div className="container">
+      <div id="drum-machine" className="container">
         
         <div className="logo">
           <i className="fa fa-free-code-camp"></i>
@@ -117,8 +117,10 @@ class App extends React.Component {
         <div className="board">
           <Keyboard 
           keys={['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C']}
+          onKeyPress={this.handleKeyClicked}
           onClick={this.handleKeyClicked}
           volume={this.state.volume}
+          bank={this.state.bank}
           url={this.state.url}
           />
         
@@ -126,7 +128,7 @@ class App extends React.Component {
             <div className={this.state.power ? "power" : "power red"} onClick={this.handlePowerSwitch}>
               <i className="fa fa-power-off"></i>
             </div>
-            <div className="display">
+            <div id="display" className="display">
                 {this.state.text}
             </div>
             <div class="volumecontainer">
@@ -156,9 +158,9 @@ const Key = (props) => {
   
   return (
     
-    <div className="key" onClick={props.onClick}>
+    <div id={props.name+"-drumpad"} className="drum-pad" onClick={props.onClick} onKeyPress={props.onKeyPress}>
       {props.name}
-      <audio id="audio" volume={props.volume} src={props.url} ></audio>  
+      <audio className="clip" id={props.name} volume={props.volume} src={props.url} type="audio/mp3"></audio>  
 
     </div>
     
@@ -174,8 +176,8 @@ const Keyboard = (props) => {
      
      <div className="keyboard">
         {props.keys.map(
-          (k, index) => <Key key={index} name={k} volume={props.volume} url={props.url} onClick={(e) => props.onClick(k, e)}/>
-        )}
+          (k, index) => <Key key={index} name={k} volume={props.volume} url={keyMap[k].urls[props.bank]} onClick={(e) => props.onClick(k, e)} onKeyPress={(e) => props.onKeyPress(k, e)}/>
+        ) }
      </div>
   
   )
