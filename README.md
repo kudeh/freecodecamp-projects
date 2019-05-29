@@ -28,8 +28,8 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    ![Alt text](/certifications/front-end-libraries.png?raw=true "Front End Libraries Certification")
 
 ### Data Visualization Projects
-   1. Visualize Data with a Bar Chart - View On CodePen.
-   2. Visualize Data with a Scatterplot Graph - View On CodePen.
+   1. Visualize Data with a Bar Chart - [View On CodePen](https://codepen.io/kudeh/full/zmxWNq).
+   2. Visualize Data with a Scatterplot Graph - [View On CodePen](https://codepen.io/kudeh/full/QRVybb).
    3. Visualize Data with a Heat Map - View On CodePen.
    4. Visualize Data with a Choropleth Map - View On CodePen.
    5. Visualize Data with a Treemap Diagram - View On CodePen.
