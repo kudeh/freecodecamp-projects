@@ -1,0 +1,11 @@
+.main .container #title {
+    text-align: center;
+    font-size: 1.75em;
+    color:#09234c;
+    font-weight: bold;
+  }
+
+  .main .container #description {
+    text-align: center;
+    font-weight: bold;
+  }
