@@ -48,8 +48,6 @@ var yMap = function(d) {
     return yScale(yValue(d));
 }
 
-
-
 // append the svg object to the body of the page
 var svg = d3.select("#viz-container")
 .append("svg")
@@ -58,6 +56,12 @@ var svg = d3.select("#viz-container")
 .append("g")
   .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
+
+// tooltip svg
+var tooltip = d3.select("#viz-container").append("div")
+.attr("class", "tooltip")
+.attr("id", "tooltip")
+.style("opacity", 0);
 
 d3.json(url, function(err, data){
 
@@ -145,5 +149,20 @@ d3.json(url, function(err, data){
             return d["temperature"];
         })
         .style("fill", function(d) { return myColor(d["temperature"])} )
+        .on("mouseover", function(d, i) {
+            tooltip.transition()
+                   .duration(200)
+                   .style("opacity", .9);
+            tooltip.html(d["year"] + " - "+ d["monthName"] + "<br/>" 
+                         + Math.round(d["temperature"], 2)+"℃")
+                 .style("left", (d3.event.pageX + 5) + "px")
+                 .style("top", (d3.event.pageY - 28) + "px")
+                 .attr("data-year", xValue(d));
+        })
+        .on("mouseout", function(d) {
+            tooltip.transition()
+                 .duration(500)
+                 .style("opacity", 0)
+        });
     
 })
