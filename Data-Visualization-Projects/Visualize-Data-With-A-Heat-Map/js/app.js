@@ -118,6 +118,7 @@ d3.json(url, function(err, data){
         .attr("y", -40)
         .text("Month");
 
+    // cells in heat map grid
     svg.selectAll(".cell")
         .data(newData)
         .enter().append("rect")
@@ -149,5 +150,55 @@ d3.json(url, function(err, data){
                  .duration(500)
                  .style("opacity", 0)
         });
+        
+        //converts temp to number between 0 and 1
+        var normalizeTemp = function(t) {
+            var z = 1-((t - minTemp)/(maxTemp-minTemp));
+            return z;
+        };
+
+        // initialize Legend
+        var legendWidth = 550;
+        var legendHeight = 50;
+        var legend = d3.select("#viz-container").append("svg")
+                       .attr("id", "legend")
+                       .attr("width", legendWidth)
+                       .attr("height", legendHeight)
+                       .attr("transform", "translate("+(margin.left)+", 0)")
+                       .append("g")
+        // legend scale
+        var legendX = d3.scaleLinear()
+                        .range([0, legendWidth])
+                        .domain([minTemp, maxTemp]);
+
+        // legend x-axis
+        var legendXAxis = d3.axisBottom(legendX)
+                           .tickFormat(d3.format(".1f"));
+
+        //add x-axis to legend svg                   
+        legend.append("g")
+              .call(legendXAxis)
+              .attr("id", "legend-axis")
+              .attr("transform", "translate(0,"+legendHeight/2+")")
+        
+        //Add rectangles for legend
+        legend.selectAll("rect")
+              .data(temps.sort())
+              .enter().append("rect")
+              .attr("x", function(d){
+                  return legendX(d);
+              })
+              .attr("y", function(d){
+                  return 0;
+              })
+              .attr("width", function(d){
+                return 50;
+            })
+            .attr("height", function(d){
+                return legendHeight/2;
+            })
+            .style("fill", function(d){
+                return d3.interpolateRdYlBu(normalizeTemp(d));
+            });
     
 })
