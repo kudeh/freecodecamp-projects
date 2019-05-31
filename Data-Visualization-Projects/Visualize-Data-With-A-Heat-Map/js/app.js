@@ -1,4 +1,4 @@
-var margin = {top: 50, right: 50, bottom: 50, left: 50},
+var margin = {top: 50, right: 80, bottom: 50, left: 80},
     width = 1500 - margin.left - margin.right,
     height = 700 - margin.top - margin.bottom;
 
@@ -27,7 +27,7 @@ var getTemps = function(data) {
 
 
 var xScale = d3.scaleBand()
-               .range([0, width]);
+               .rangeRound([0, width], 0.1);
 var yScale = d3.scaleBand()
                .range([height, 0]);
 
@@ -76,37 +76,27 @@ d3.json(url, function(err, data){
     var temps = getTemps(newData);
     var minTemp = Math.min(...temps);
     var maxTemp = Math.max(...temps);
-    var colorRange = temps.map(function(t){
-        var z = (t-minTemp)/(maxTemp-minTemp);
-        return z;
-    });
+
     // Build color scale
-    var myColor = d3.scaleLinear()
-            .range([d3.interpolateRdYlBu(Math.min(...colorRange)),
-                    d3.interpolateRdYlBu(Math.max(...colorRange))])
-            .domain([minTemp, maxTemp])
-
-
-    var tickVals = newData.filter(function(d){
-        if(d["year"]%10===0){
-            return d["year"];
-        };
-    });
-
-    console.log(tickVals);
+    var myColor = d3.scaleSequential(d3.interpolateRdYlBu)
+                    .domain([maxTemp, minTemp])
 
     xScale.domain(newData.map(function(d){
         return d["year"];
-    }))
-    
-    // xAxis.tickValues(newData.filter(function(d){
-    //     if(d["year"]%10===0){
-    //         return d["year"];
-    //     };
-    // }))
+    }));
+
     var reversedMonthNames = monthNames.reverse();
-    yScale.domain(reversedMonthNames)
-          .padding(0.02);
+    yScale.domain(reversedMonthNames);
+
+    var xDomain = [...xScale.domain()]
+
+    var tickVals = xDomain.filter(function(d){
+        return d%10===0;
+    }).map(function(d){
+            return d;
+    });
+
+    xAxis.tickValues(tickVals);
 
     // x-axis
     svg.append("g")
@@ -135,11 +125,6 @@ d3.json(url, function(err, data){
         .attr("y", yMap)
         .attr("width", xScale.bandwidth())
         .attr("height", yScale.bandwidth())
-        .style("padding", "010")
-        // .attr("width", )
-        // .attr("height", function(d,i){
-        //     return yScale.rangeBand(d.month);
-        //   })
         .attr("class", "cell")
         .attr("data-year", xValue)
         .attr("data-month", function(d){
