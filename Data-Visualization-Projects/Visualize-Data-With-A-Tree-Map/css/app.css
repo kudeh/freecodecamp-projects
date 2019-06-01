@@ -16,10 +16,10 @@
     justify-content: center;
     position: absolute;
     text-align: center;
-    width: 220px;
-    height: 60px;
     font-weight: bold;
-    background: lightsalmon;
+    width: 200px;
+    background: lightyellow;
+    padding: 5px;
     color:#09234c;
     box-shadow: 1px 1px 10px;
     border-radius: 2px;
@@ -27,9 +27,7 @@
     opacity: 0.5;
   }
 
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
+ tspan {
+    font-size: 0.65em;
   }
+
