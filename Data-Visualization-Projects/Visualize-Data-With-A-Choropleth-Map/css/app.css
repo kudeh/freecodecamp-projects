@@ -1,0 +1,45 @@
+.main .container #title {
+    text-align: center;
+    font-size: 1.75em;
+    color:#09234c;
+    font-weight: bold;
+  }
+
+  .main .container #description {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #tooltip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    width: 220px;
+    height: 60px;
+    font-weight: bold;
+    background: lightsalmon;
+    color:#09234c;
+    box-shadow: 1px 1px 10px;
+    border-radius: 2px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  .info {
+    font-size: 0.8em;
+    color: #09234c;
+  }
+
+  .state-boundary {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+  }
