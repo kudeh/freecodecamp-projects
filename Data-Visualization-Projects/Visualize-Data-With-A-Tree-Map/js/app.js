@@ -84,4 +84,51 @@ d3.json(movieSalesURL, function(err, data){
          .attr("x", 5)
          .attr("y", function(d, i) { return 10 + i * 15; })
          .text(function(d) { return d; });
+
+    //legend
+    var legend = d3.select("#viz-container")
+                   .append("div")
+                   .attr("id", "legend")
+                   .append("svg")                  
+
+    var categories = root.leaves().map(function(nodes){
+    return nodes.data.category;
+    });
+    categories = categories.filter(function(category, index, self){
+    return self.indexOf(category)===index;    
+    })
+
+    var legendWidth = 300;
+    const LEGEND_OFFSET = 10;
+    const LEGEND_RECT_SIZE = 15;
+    const LEGEND_H_SPACING = 150;
+    const LEGEND_V_SPACING = 10;
+    const LEGEND_TEXT_X_OFFSET = 3;
+    const LEGEND_TEXT_Y_OFFSET = -2;
+    var legendElemsPerRow = Math.floor(legendWidth/LEGEND_H_SPACING);
+    
+    var legendElem = legend
+        .append("g")
+        .attr("transform", "translate(60," + LEGEND_OFFSET + ")")
+        .selectAll("g")
+        .data(categories)
+        .enter().append("g")
+        .attr("transform", function(d, i) { 
+        return 'translate(' + 
+        ((i%legendElemsPerRow)*LEGEND_H_SPACING) + ',' + 
+        ((Math.floor(i/legendElemsPerRow))*LEGEND_RECT_SIZE + (LEGEND_V_SPACING*(Math.floor(i/legendElemsPerRow)))) + ')';
+        })
+        
+    legendElem.append("rect")                              
+        .attr('width', LEGEND_RECT_SIZE)                          
+        .attr('height', LEGEND_RECT_SIZE)     
+        .attr('class','legend-item')                 
+        .attr('fill', function(d){
+        return color(d);
+        })
+        
+    legendElem.append("text")                              
+        .attr('x', LEGEND_RECT_SIZE + LEGEND_TEXT_X_OFFSET)                          
+        .attr('y', LEGEND_RECT_SIZE + LEGEND_TEXT_Y_OFFSET)                       
+        .text(function(d) { return d; });  
 })

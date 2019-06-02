@@ -31,3 +31,12 @@
     font-size: 0.65em;
   }
 
+  #legend {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+  }
+
+
+
