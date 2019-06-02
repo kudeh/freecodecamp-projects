@@ -27,12 +27,14 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    5. Build a Pomodoro Clock - [View On CodePen](https://codepen.io/kudeh/full/YbLeBe).
    ![Alt text](/certifications/front-end-libraries.png?raw=true "Front End Libraries Certification")
 
+
 ### Data Visualization Projects
    1. Visualize Data with a Bar Chart - [View On CodePen](https://codepen.io/kudeh/full/zmxWNq).
    2. Visualize Data with a Scatterplot Graph - [View On CodePen](https://codepen.io/kudeh/full/QRVybb).
    3. Visualize Data with a Heat Map - [View On CodePen](https://codepen.io/kudeh/full/KLGmQy).
    4. Visualize Data with a Choropleth Map - [View On CodePen](https://codepen.io/kudeh/pen/qGLaaa).
-   5. Visualize Data with a Treemap Diagram - View On CodePen.
+   5. Visualize Data with a Treemap Diagram - [View On CodePen](https://codepen.io/kudeh/full/wbNGLK).
+   ![Alt text](/certifications/data-visualization.png?raw=true "Data Visualization Certification")   
 
 
 ### APIs And Microservices Projects
@@ -42,6 +44,7 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    4. Exercise Tracker - [View On Glitch](https://uncovered-parakeet.glitch.me/).
    5. File Metadata Microservice - [View On Glitch](https://simple-aluminum.glitch.me/).
    ![Alt text](/certifications/api-and-microservices.png?raw=true "API and Microservices Certification")
+
 
 ### Information Security And Quality Assurance Projects
    1. Metric-Imperial Converter 
