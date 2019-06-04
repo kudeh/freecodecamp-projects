@@ -1,5 +1,6 @@
 # My-FreeCodeCamp-Projects
 Projects that I have completed while going through the FreeCodeCamp Curriculum.
+[Donate to freeCodeCamp](https://donate.freecodecamp.org/).
 
 ## Front End Libraries Projects
    1. Build a Random Quote Machine - [View On CodePen](https://codepen.io/kudeh/full/KGKVJo/).
@@ -42,7 +43,7 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    2. Issue Tracker 
    3. Personal Library 
    4. Stock Price Checker 
-   5. PassedAnonymous Message Board 
+   5. Anonymous Message Board 
    
 
 ## Javascript Algorithms and Data Structures Projects
