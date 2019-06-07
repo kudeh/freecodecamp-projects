@@ -1,0 +1,19 @@
+{
+  "name": "metric-imperial-converter",
+  "version": "1.0.0",
+  "description": "metric to imperial converter app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "metric",
+    "imperial",
+    "converter"
+  ],
+  "author": "Kene Udeh",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
