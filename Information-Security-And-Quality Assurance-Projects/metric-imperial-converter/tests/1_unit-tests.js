@@ -87,7 +87,11 @@ suite('Unit Tests', function(){
   suite('Function convertHandler.spellOutUnit(unit)', function() {
     
     test('For Each Valid Unit Inputs', function(done) {
-      //see above example for hint
+      var input = ['gal','l','mi','km','lbs','kg'];
+      var expect = ['gallons','liters','miles','kilometers','pounds','kilograms'];
+      input.forEach(function(ele, i) {
+        assert.equal(convertHandler.spellOutUnit(ele), expect[i]);
+      });
       done();
     });
     
@@ -103,28 +107,38 @@ suite('Unit Tests', function(){
     });
     
     test('L to Gal', function(done) {
-      
-      //done();
+      var input = [18.9271, 'L'];
+      var expected = 5;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
+      done();
     });
     
     test('Mi to Km', function(done) {
-      
-      //done();
+      var input = [17.2, 'mi'];
+      var expected = 27.6806;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
+      done();
     });
     
     test('Km to Mi', function(done) {
-      
-      //done();
+      var input = [27.6806, 'km'];
+      var expected = 17.2;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
+      done();
     });
     
     test('Lbs to Kg', function(done) {
-      
-      //done();
+      var input = [20, 'lbs'];
+      var expected =  9.0718;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
+      done();
     });
     
     test('Kg to Lbs', function(done) {
-      
-      //done();
+      var input = [9.0718, 'kg'];
+      var expected = 20;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
+      done();
     });
     
   });

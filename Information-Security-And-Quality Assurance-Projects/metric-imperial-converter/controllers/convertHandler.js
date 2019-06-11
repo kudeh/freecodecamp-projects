@@ -25,8 +25,8 @@ function ConvertHandler() {
     if(num.includes("/")){
       var numArr = num.split("/");
       if(numArr.length === 2){
-        numer = parseFloat(numArr[0]);
-        denom = parseFloat(numArr[1]);
+        var numer = parseFloat(numArr[0]);
+        var denom = parseFloat(numArr[1]);
 
         if(!isNaN(numer) && !isNaN(denom)){
           return numer/denom;
@@ -48,7 +48,11 @@ function ConvertHandler() {
     var result = null;
     var possibleUnits = ['gal', 'lbs', 'mi', 'kg', 'l', 'km'];
     var splitIndex = input.search(/[A-Za-z]+/);
-    var unit = input.slice(splitIndex).toLowerCase();
+    var unit = input.slice(splitIndex)
+    
+    if(unit){
+      unit = unit.toLowerCase();
+    }
     
     if(possibleUnits.includes(unit)){
       result = unit;
@@ -58,28 +62,44 @@ function ConvertHandler() {
   };
   
   this.getReturnUnit = function(initUnit) {
+
+    if(!initUnit){
+      return null;
+    }
+
+    var unit = initUnit.toLowerCase();
+
     const mapping = {
       lbs: 'kg',
-      gal: 'L',
+      gal: 'l',
       mi: 'km',
       kg: 'lbs',
-      L: 'gal',
+      l: 'gal',
       km: 'mi'
     }
     
-    var result = mapping[initUnit];
+    var result = null;
+    if(mapping[unit]){
+      result = mapping[unit];
+    }
     
     return result;
   };
 
   this.spellOutUnit = function(unit) {
+
+    if(!unit){
+      return null;
+    }
     
+    var unit = unit.toLowerCase();
+
     const mapping = {
       lbs: 'pounds',
       gal: 'gallons',
       mi: 'miles',
       kg: 'kilograms',
-      L: 'liters',
+      l: 'liters',
       km: 'kilometers'
     }
     
@@ -89,7 +109,12 @@ function ConvertHandler() {
   };
   
   this.convert = function(initNum, initUnit) {
+
+    if(!initNum || !initUnit){
+      return null;
+    }
     
+    var unit = initUnit.toLowerCase();
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
@@ -99,11 +124,15 @@ function ConvertHandler() {
       gal: galToL,
       mi: miToKm,
       kg: 1/lbsToKg,
-      L: 1/galToL,
+      l: 1/galToL,
       km: 1/miToKm
     }
     
-    var result = initNum * mapping[initUnit];
+    var result = null;
+    
+    if(mapping[unit]){
+      result = initNum * mapping[unit];
+    }
     
     return result;
   };

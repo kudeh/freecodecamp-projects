@@ -18,10 +18,16 @@ module.exports = function (app) {
   app.route('/api/convert')
     .get(function (req, res){
       var input = req.query.input;
-      var initNum = convertHandler.getNum(input).toFixed(5);
+      var initNum = convertHandler.getNum(input);
+      if(initNum){
+        initNum = initNum.toFixed(5);
+      }
       var initUnit = convertHandler.getUnit(input);
 
-      var returnNum = convertHandler.convert(initNum, initUnit).toFixed(5);
+      var returnNum = convertHandler.convert(initNum, initUnit)
+      if(returnNum){
+        returnNum = returnNum.toFixed(5);
+      }
       var returnUnit = convertHandler.getReturnUnit(initUnit);
       var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
 
