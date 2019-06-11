@@ -23,28 +23,33 @@ suite('Unit Tests', function(){
     });
     
     test('Decimal Input', function(done) {
-      
-      //done();
+      var input = '32.0lbs';
+      assert.equal(convertHandler.getNum(input), 32);
+      done();
     });
     
     test('Fractional Input', function(done) {
-      
-      //done();
+      var input = '1/32kg';
+      assert.equal(convertHandler.getNum(input), (1/32));
+      done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      
-      //done();
+      var input = '1.5/32kg';
+      assert.equal(convertHandler.getNum(input), (1.5/32));
+      done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      
-      //done();
+      var input = '12/13/4/32kg';
+      assert.isNull(convertHandler.getNum(input));
+      done();
     });
     
     test('No Numerical Input', function(done) {
-      
-      //done();
+      var input = '##kg';
+      assert.isNull(convertHandler.getNum(input));
+      done();
     }); 
     
   });
@@ -54,14 +59,14 @@ suite('Unit Tests', function(){
     test('For Each Valid Unit Inputs', function(done) {
       var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
       input.forEach(function(ele) {
-        //assert
+          assert.equal(convertHandler.getUnit(ele), ele.toLowerCase());
       });
       done();
     });
     
     test('Unknown Unit Input', function(done) {
-      
-      //done();
+      assert.isNull(convertHandler.getUnit('gea'));
+      done();
     });  
     
   });
