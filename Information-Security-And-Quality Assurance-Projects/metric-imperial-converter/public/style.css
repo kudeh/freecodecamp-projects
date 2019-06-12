@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FDFEEC;
+    color: #31759A;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 50px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+
+.supported {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 10px;
+    color:#FF2D6E;
+}
+
+.table {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 2fr 1fr;
+    padding: 10px;
+}
+
+.metric, .imperial {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.fa-arrows-h {
+    width: 100%;
+}
+
+.form {
+    margin: 10px;
+}
+
+#convertForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#convertField {
+    margin: 2px;
+    padding: 10px;
+    border: 5px solid rgb(244, 247, 189);
+    font-weight: bold;
+    font-size: 1.25em;
+    width: 85%;
+}
+
+#convertField:hover, #convertField:active {
+    border: 5px solid #31759A; 
+}
+
+input[type=submit] {
+    font-weight: bold;
+    font-size: 1.25em;
+    background-color: #FF2D6E;
+    color: #FDFEEC;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+input[type=submit]:hover, input[type=submit]:active {
+    transform: scale(0.95);
+}
+
+#result {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+.result-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.fa-arrow-right {
+    color: #FF2D6E;
+}
+
