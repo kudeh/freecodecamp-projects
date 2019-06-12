@@ -6,8 +6,14 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #31759A;
+    display: flex;
+    justify-content: center;
+}
+
 .container {
-    width: 100%;
+    width: 85%;
     height: 100vh;
     display: flex;
     flex-direction: column;
