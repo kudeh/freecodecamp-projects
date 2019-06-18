@@ -1,23 +1,64 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
-body {
-  padding: 10px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.issue {
-  margin: 20px;
-  padding: 5px;
-  width: 60%;
-  border: 2px solid black;
+#header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 10px;
 }
 
-.closed {
-  background-color: lightgrey;
+#issue-form {
+  margin-top: 10px;
 }
 
-.id {
-  font-size: 10.5px;
+#form-header {
+  text-align: center;
+  font-style: italic;
+}
+
+#newIssue {
+  display: grid;
+  grid-template: 1fr 3fr 1fr 1fr / 1fr 1fr 1fr;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+}
+
+#title {
+  grid-column: 1 / span 3;
+  padding: 8px;
+}
+
+#textarea {
+  grid-column: 1 /span 3;
+  grid-row: 2 / span 3;
+}
+
+#created {
+  grid-column: 1 / span 1;
+  padding: 8px;
+}
+
+#assigned {
+  grid-column: 2 / span 1;
+  padding: 8px;
+}
+
+#status {
+  grid-column: 3 / span 1;
+  padding: 8px;
+}
+
+#submit {
+  grid-column: 2 / span 1;
+  padding: 8px;
 }

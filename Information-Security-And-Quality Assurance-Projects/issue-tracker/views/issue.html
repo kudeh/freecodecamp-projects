@@ -13,7 +13,7 @@
     <header>
       <h1 id='projectTitle'>Issue Tracker For Project Xist</h1>
     </header>
-    <div id='submitNewIssue'>
+      <div id='submitNewIssue'>
         <br>
         <h3>Submit a new issue:</h3>
         <form id="newIssue" method="post" action="/api/">
@@ -24,17 +24,19 @@
           <input type="text" name="status_text" placeholder="(opt)Status text" style="width: 100px"><br>
           <button type="submit">Submit Issue</button>
         </form>
-      </div>   
-      <div id='issueDisplay'>
-
       </div>
+      
+      <div id='issueDisplay'></div>
+      
+      <hr style='margin: 50px; margin-top: 200px'>
+    </center>
     
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
             integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
             crossorigin="anonymous"></script>
     <script>
       $(function() {
-        var currentProject = window.location.pathname.replace(/\//g, "");
+        var currentProject = window.location.pathname.replace(/\//g, "");;
         var url = "/api/issues/"+currentProject;
         $('#projectTitle').text('All issues for: '+currentProject)
         $.ajax({

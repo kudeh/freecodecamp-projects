@@ -1,21 +1,13 @@
-/*
-*
-*
-*       Complete the API routing below
-*
-*
-*/
-
 'use strict';
 
-var expect = require('chai').expect;
-var MongoClient = require('mongodb');
-var ObjectId = require('mongodb').ObjectID;
+const expect = require('chai').expect;
+const MongoClient = require('mongodb');
+const ObjectId = require('mongodb').ObjectID;
 
 const CONNECTION_STRING = process.env.DB; 
 
-module.exports = function (app) {
-
+module.exports = function (app) { 
+  
   app.route('/api/issues/:project')
   
     .get((req, res) => {

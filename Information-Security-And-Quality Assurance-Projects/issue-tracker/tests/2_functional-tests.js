@@ -19,7 +19,7 @@ suite('Functional Tests', function() {
       
       test('Every field filled in', function(done) {
        chai.request(server)
-        .post('/api/issues/Xist')
+        .post('/api/issues/issues')
         .send({
           issue_title: 'Title',
           issue_text: 'text',
@@ -66,7 +66,7 @@ suite('Functional Tests', function() {
       
       test('No filter', function(done) {
         chai.request(server)
-        .get('/api/issues/test')
+        .get('/api/issues/issues')
         .query({})
         .end(function(err, res){
           assert.equal(res.status, 200);
