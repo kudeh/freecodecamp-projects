@@ -4,10 +4,10 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
 
 ## Front End Libraries Projects
    1. Build a Random Quote Machine - [View On CodePen](https://codepen.io/kudeh/full/KGKVJo/).
-   2. Build a Markdown Previewer - [View On CodePen](https://codepen.io/kudeh/full/rRxQrm).
-   3. Build a Drum Machine - [View On CodePen](https://codepen.io/kudeh/full/rRzxGZ).
-   4. Build a Javascript Calculator - [View On CodePen](https://codepen.io/kudeh/full/ZZbONd).
-   5. Build a Pomodoro Clock - [View On CodePen](https://codepen.io/kudeh/full/YbLeBe).
+   2. Build a Markdown Previewer - [View On Github](https://kudeh.github.io/freecodecamp-projects/Front-End-Libraries-Projects/Build%20a%20Markdown%20Previewer/).
+   3. Build a Drum Machine - [View On Github](https://kudeh.github.io/freecodecamp-projects/Front-End-Libraries-Projects/Build%20a%20Drum%20Machine/).
+   4. Build a Javascript Calculator - [View On Github](https://kudeh.github.io/freecodecamp-projects/Front-End-Libraries-Projects/Build%20a%20Javascript%20Calculator/).
+   5. Build a Pomodoro Clock - [View On Github](https://kudeh.github.io/freecodecamp-projects/Front-End-Libraries-Projects/Build%20a%20Pomodoro%20Clock/).
    ![Alt text](/certifications/front-end-libraries.png?raw=true "Front End Libraries Certification")
 
 
