@@ -93,7 +93,7 @@ module.exports = function (app) {
       MongoClient.connect(CONNECTION_STRING)
                  .then(db => {
                    const collection = db.collection(project);
-                   collection.update({_id: issueID}, {$set: {open: req.body.open}})
+                   collection.update({_id: issueID}, {$set: {open: req.body.open, updated_on: Date.now()}})
                              .then(doc => {
                               res.send('success')
                              })

@@ -1,30 +1,35 @@
 'use strict';
 
-var express     = require('express');
-var bodyParser  = require('body-parser');
-var expect      = require('chai').expect;
-var cors        = require('cors');
+const express     = require('express');
+const bodyParser  = require('body-parser');
+const expect      = require('chai').expect;
+const cors        = require('cors');
 
-var apiRoutes         = require('./routes/api.js');
-var fccTestingRoutes  = require('./routes/fcctesting.js');
-var runner            = require('./test-runner');
-var helmet = require('helmet');
 
-var app = express();
+const apiRoutes         = require('./routes/api.js');
+const fccTestingRoutes  = require('./routes/fcctesting.js');
+const runner            = require('./test-runner');
+const helmet            = require('helmet');
+
+
+const app = express();
+
 
 app.use(helmet.xssFilter())
-
 app.use('/public', express.static(process.cwd() + '/public'));
-
-app.use(cors({origin: '*'}));
-
+app.use(cors({origin: '*'})); //For FCC testing purposes only
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//Index page (static HTML)
+
+app.set('views', __dirname + '/public/views');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
+//Sample front-end
 app.route('/')
-  .get(function (req, res) {
-    res.sendFile(process.cwd() + '/views/index.html');
+.get(function (req, res) {
+  res.sendFile(process.cwd() + '/views/index.html');
 });
 
 //For FCC testing purposes

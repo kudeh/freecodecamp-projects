@@ -1,20 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
+body {
+  background-color: #041b4f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #edf5f7;
+  width: 95%;
+  min-height: 100vh;
 }
 
 #header {
   text-align: center;
   font-weight: bold;
   font-size: 1.5em;
-  margin: 10px;
+  margin: 15px;
+  color: #041b4f;
 }
 
 #issue-form {
@@ -24,6 +38,7 @@
 #form-header {
   text-align: center;
   font-style: italic;
+  color: #041b4f;
 }
 
 #newIssue {
@@ -33,7 +48,13 @@
   grid-column-gap: 10px;
 }
 
+input, textarea {
+  border-radius: 5px;
+  border: 1px solid #919fa3;
+}
+
 #title {
+  margin-top: 5px;
   grid-column: 1 / span 3;
   padding: 8px;
 }
@@ -41,6 +62,7 @@
 #textarea {
   grid-column: 1 /span 3;
   grid-row: 2 / span 3;
+  padding: 5px;
 }
 
 #created {
@@ -60,5 +82,143 @@
 
 #submit {
   grid-column: 2 / span 1;
-  padding: 8px;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.25em;
+  color: white;
+  background-color: #6cc7eb;
+  border: 2px solid #118aba;
+  cursor: pointer;
+  transition: .3s;
+}
+
+#submit:hover, #submit:active {
+  transform: scale(.9);
+}
+
+#issue-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin: 20px;
+  width: 90%;
+  border-top: 3px solid #919fa3;
+  padding-top: 10px;
+}
+
+.card {
+  font-family: 'Roboto', sans-serif;
+  border-radius: 10px;
+  border: 2px solid #dcded9;
+  background-color: #e7e8e6;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid #ebede8;
+}
+
+.green {
+  background-color: #5bb077;
+}
+
+.red {
+  background-color: #ed5f4a;
+}
+
+.card-body {
+  padding: 15px;
+  margin: 5px;
+  font-size: 0.85em;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.card-body-content p {
+  padding: 2px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.closeButton {
+  margin: 5px;
+  background-color: #f7ba7c;
+  border: 2px solid #d1863b;
+}
+
+.deleteButton {
+  margin: 5px;
+  background-color: #ed5f4a;
+  border: 2px solid #a33208;
+}
+
+.btn {
+  text-align: center;
+  padding: 5px;
+  transition: .3s;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.btn:hover, .btn:active {
+  transform: scale(.9);
+}
+
+@media (max-width: 600px) {
+  
+  #header {
+    font-size: .85em;
+  }
+  
+  #issue-list {
+    display: grid;
+    grid-template-columns: 1fr ;
+  }
+  
+  #issue-form {
+    width: 90%;
+  }
+  
+  #newIssue {
+   display: grid;
+   grid-template-columns: 1fr;
+  }
+  
+  #title {
+   grid-column: 1;
+  }
+
+  #textarea {
+    grid-column: 1;
+  }
+
+  #created {
+    grid-column: 1;
+  }
+
+  #assigned {
+    grid-column: 1;
+  }
+
+  #status {
+    grid-column: 1;
+  }
+
+  #submit {
+    grid-column: 1;
+    width: 55%;
+    justify-self: center;
+  }
+  
 }
