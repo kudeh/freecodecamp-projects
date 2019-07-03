@@ -40,7 +40,7 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
 
 ## Information Security And Quality Assurance Projects
    1. Metric-Imperial Converter - [View On Glitch](https://guiltless-honeysuckle.glitch.me/).
-   2. Issue Tracker 
+   2. Issue Tracker - [View On Glitch](https://orange-cotton.glitch.me/).
    3. Personal Library 
    4. Stock Price Checker 
    5. Anonymous Message Board 
