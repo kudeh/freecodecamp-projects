@@ -1,4 +1,4 @@
-# My-FreeCodeCamp-Projects
+# FreeCodeCamp Projects
 Projects that I have completed while going through the FreeCodeCamp Curriculum.
 [Donate to freeCodeCamp](https://donate.freecodecamp.org/).
 
