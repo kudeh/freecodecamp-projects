@@ -47,9 +47,9 @@ Projects that I have completed while going through the FreeCodeCamp Curriculum.
    
 
 ## Javascript Algorithms and Data Structures Projects
-   1. Palindrome Checker
-   2. Roman Numeral Converter
-   3. Caesars Cipher
-   4. Telephone Number Validator
-   5. Cash Register
+   1. Palindrome Checker - [View Code](https://github.com/kudeh/freecodecamp-projects/blob/master/Javascript-Algorithms-And-Data-Structures-Projects/palindrome.js)
+   2. Roman Numeral Converter - [View Code](https://github.com/kudeh/freecodecamp-projects/blob/master/Javascript-Algorithms-And-Data-Structures-Projects/convert_to_roman.js) 
+   3. Caesars Cipher - [View Code](https://github.com/kudeh/freecodecamp-projects/blob/master/Javascript-Algorithms-And-Data-Structures-Projects/caesars_cipher.js)
+   4. Telephone Number Validator - [View Code](https://github.com/kudeh/freecodecamp-projects/blob/master/Javascript-Algorithms-And-Data-Structures-Projects/phone_num_validator.js)
+   5. Cash Register - [View Code](https://github.com/kudeh/freecodecamp-projects/blob/master/Javascript-Algorithms-And-Data-Structures-Projects/cash_register.js)
    ![Alt text](/certifications/javascript-algorithms-and-data-structures.png?raw=true "Javascript Algorithms and Data Structures Certification")   
